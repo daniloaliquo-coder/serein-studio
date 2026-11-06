@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-synthesis: none;
+  }
+
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply min-h-screen bg-cream-50 font-sans text-ink antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 55% at 10% -10%, rgba(234, 201, 182, 0.32), transparent 60%),
+      radial-gradient(ellipse 65% 45% at 100% 0%, rgba(220, 231, 225, 0.45), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-feature-settings: 'ss01' on, 'liga' on;
+  }
+
+  ::selection {
+    background: rgba(188, 121, 89, 0.22);
+    color: #142520;
+  }
+
+  :focus-visible {
+    outline: 2px solid #537568;
+    outline-offset: 3px;
+  }
+
+  input[type='time']::-webkit-calendar-picker-indicator,
+  input[type='date']::-webkit-calendar-picker-indicator {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #1d2521;
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-optical-sizing: auto;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shimmer {
+    background-image: linear-gradient(
+      90deg,
+      rgba(229, 222, 211, 0.28) 0%,
+      rgba(252, 250, 246, 0.75) 45%,
+      rgba(229, 222, 211, 0.28) 100%
+    );
+    background-size: 700px 100%;
+    animation: shimmer 1.6s infinite linear;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

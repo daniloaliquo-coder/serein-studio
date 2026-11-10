@@ -15,7 +15,7 @@ const STEPS = [
 
 function Stepper({ current, onNavigate }) {
   return (
-    <div className="flex items-center gap-1 rounded-2xl border border-line/80 bg-white/70 px-3 py-2.5 backdrop-blur-sm sm:px-4">
+    <div className="flex items-center gap-1 sm:gap-2 rounded-xl border border-line/80 bg-white/70 px-3 py-2 backdrop-blur-sm sm:px-4">
       {STEPS.map((step, index) => {
         const isComplete = step.number < current
         const isCurrent = step.number === current
@@ -36,18 +36,18 @@ function Stepper({ current, onNavigate }) {
             >
               <span
                 className={cn(
-                  'grid h-7 w-7 shrink-0 place-items-center rounded-full border text-[11px] font-bold transition-colors',
-                  isComplete && 'border-forest-800 bg-forest-800 text-cream-50',
-                  isCurrent && 'border-forest-800 bg-forest-50 text-forest-900 ring-4 ring-forest-500/10',
-                  !isComplete && !isCurrent && 'border-line bg-white text-muted/50',
+                  'grid h-6 w-6 shrink-0 place-items-center rounded-full border text-[10px] font-bold transition-colors',
+                  isComplete && 'border-forest-800 bg-forest-800 text-paper-50',
+                  isCurrent && 'border-forest-800 bg-forest-50 text-forest-900 ring-3 ring-forest-500/10',
+                  !isComplete && !isCurrent && 'border-line bg-white text-muted/40',
                 )}
               >
-                {isComplete ? <Check className="h-3.5 w-3.5" aria-hidden="true" /> : step.number}
+                {isComplete ? <Check className="h-3 w-3" aria-hidden="true" /> : step.number}
               </span>
               <span
                 className={cn(
-                  'whitespace-nowrap text-[10px] font-semibold tracking-wide sm:text-xs',
-                  isCurrent ? 'text-forest-950' : isComplete ? 'text-forest-700' : 'text-muted/55',
+                  'whitespace-nowrap text-[10px] font-semibold tracking-tight sm:text-xs',
+                  isCurrent ? 'text-forest-950' : isComplete ? 'text-forest-700' : 'text-muted/50',
                 )}
               >
                 {step.label}
@@ -56,7 +56,7 @@ function Stepper({ current, onNavigate }) {
             {index < STEPS.length - 1 ? (
               <span
                 className={cn(
-                  'mx-2 h-px flex-1 sm:mx-3',
+                  'mx-1 h-px flex-1 sm:mx-2',
                   step.number < current ? 'bg-forest-300' : 'bg-line',
                 )}
                 aria-hidden="true"
@@ -153,7 +153,7 @@ export function BookingFlow({ services, settings, isDemo }) {
           </div>
 
           {step < 3 ? (
-            <div className="flex items-center justify-between gap-3 border-t border-line/80 bg-cream-50/65 px-5 py-4 sm:px-7">
+            <div className="flex items-center justify-between gap-3 border-t border-line/80 bg-paper-50/65 px-5 py-4 sm:px-7">
               <div>
                 {step === 2 ? (
                   <Button type="button" variant="ghost" size="sm" onClick={() => setStep(1)}>

@@ -11,7 +11,7 @@ export const Select = forwardRef(function Select(
       <select
         ref={ref}
         className={cn(
-          'h-11 w-full appearance-none rounded-xl border border-line bg-white px-3.5 pr-9 text-sm text-ink shadow-sm shadow-forest-950/[0.02] transition-colors focus:border-forest-400 focus:outline-none focus:ring-4 focus:ring-forest-500/10 disabled:cursor-not-allowed disabled:bg-cream-100 disabled:opacity-70',
+          'h-11 w-full appearance-none rounded-xl border border-line bg-white px-3.5 pr-9 text-sm text-ink shadow-sm shadow-forest-950/[0.02] transition-colors focus:border-forest-400 focus:outline-none focus:ring-4 focus:ring-forest-500/10 disabled:cursor-not-allowed disabled:bg-paper-100 disabled:opacity-70',
           className,
         )}
         {...props}

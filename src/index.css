@@ -18,10 +18,10 @@
   }
 
   body {
-    @apply min-h-screen bg-cream-50 font-sans text-ink antialiased;
+    @apply min-h-screen bg-paper-50 font-sans text-ink antialiased;
     background-image:
-      radial-gradient(ellipse 80% 55% at 10% -10%, rgba(234, 201, 182, 0.32), transparent 60%),
-      radial-gradient(ellipse 65% 45% at 100% 0%, rgba(220, 231, 225, 0.45), transparent 55%);
+      radial-gradient(ellipse 80% 55% at 10% -10%, rgba(199, 155, 106, 0.18), transparent 60%),
+      radial-gradient(ellipse 65% 45% at 100% 0%, rgba(220, 231, 225, 0.35), transparent 55%);
     background-attachment: fixed;
   }
 
@@ -37,12 +37,12 @@
   }
 
   ::selection {
-    background: rgba(188, 121, 89, 0.22);
-    color: #142520;
+    background: rgba(179, 130, 71, 0.22);
+    color: #0F1B15;
   }
 
   :focus-visible {
-    outline: 2px solid #537568;
+    outline: 2px solid #B38247;
     outline-offset: 3px;
   }
 
@@ -55,7 +55,7 @@
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
-    -webkit-text-fill-color: #1d2521;
+    -webkit-text-fill-color: #0F1B15;
     -webkit-box-shadow: 0 0 0 1000px #fff inset;
     transition: background-color 5000s ease-in-out 0s;
   }

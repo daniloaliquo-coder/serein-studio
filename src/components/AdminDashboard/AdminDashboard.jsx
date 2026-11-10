@@ -62,16 +62,16 @@ function MenuButton({ active, icon: Icon, label, count, onClick }) {
       onClick={onClick}
       aria-current={active ? 'page' : undefined}
       className={cn(
-        'group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all',
+        'group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors',
         active
-          ? 'bg-cream-50 text-forest-950 shadow-sm'
-          : 'text-cream-200/60 hover:bg-white/[0.055] hover:text-cream-50',
+          ? 'bg-bronze-50 text-forest-900 shadow-sm'
+          : 'text-paper-300/60 hover:bg-white/[0.055] hover:text-paper-100',
       )}
     >
       <Icon
         className={cn(
           'h-4 w-4 shrink-0',
-          active ? 'text-forest-700' : 'text-cream-200/40 group-hover:text-cream-100',
+          active ? 'text-forest-700' : 'text-paper-300/40 group-hover:text-paper-100',
         )}
         aria-hidden="true"
       />
@@ -80,7 +80,7 @@ function MenuButton({ active, icon: Icon, label, count, onClick }) {
         <span
           className={cn(
             'grid h-5 min-w-5 place-items-center rounded-full px-1 text-[9px] font-bold',
-            active ? 'bg-forest-800 text-cream-50' : 'bg-white/10 text-cream-100',
+            active ? 'bg-forest-800 text-paper-50' : 'bg-white/10 text-paper-100',
           )}
         >
           {count}
@@ -232,23 +232,23 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
   ).length
 
   return (
-    <div className="min-h-screen bg-cream-100/55">
-      <aside className="fixed inset-y-0 left-0 z-40 hidden w-[264px] flex-col overflow-hidden bg-forest-950 text-cream-50 lg:flex">
+    <div className="min-h-screen bg-paper-50">
+      <aside className="fixed inset-y-0 left-0 z-40 hidden w-[264px] flex-col overflow-hidden bg-forest-950 text-paper-50 lg:flex">
         <div className="noise pointer-events-none absolute inset-0 opacity-[0.035]" aria-hidden="true" />
         <div
-          className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-clay-400/10 blur-3xl"
+          className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-bronze-400/10 blur-3xl"
           aria-hidden="true"
         />
 
         <div className="relative border-b border-white/10 px-6 py-7">
           <Brand name={settings.business_name} variant="dark" />
-          <p className="mt-3 text-[8px] font-semibold uppercase tracking-[0.24em] text-cream-200/35">
+          <p className="mt-3 text-[8px] font-semibold uppercase tracking-[0.24em] text-paper-200/35">
             Panel de gestión
           </p>
         </div>
 
         <nav className="relative flex-1 px-3.5 py-6" aria-label="Navegación del panel">
-          <p className="px-3 pb-3 text-[8px] font-bold uppercase tracking-[0.26em] text-cream-200/30">
+          <p className="px-3 pb-3 text-[8px] font-bold uppercase tracking-[0.26em] text-paper-300/30">
             Gestión
           </p>
           <div className="space-y-1">
@@ -267,10 +267,10 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
           <div className="mt-7 border-t border-white/10 pt-5">
             <a
               href="#/"
-              className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-cream-200/50 transition-colors hover:bg-white/[0.055] hover:text-cream-50"
+              className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-paper-200/50 transition-colors hover:bg-white/[0.055] hover:text-paper-100"
             >
               <ArrowUpRight
-                className="h-4 w-4 text-cream-200/30 group-hover:text-cream-100"
+                className="h-4 w-4 text-paper-300/30 group-hover:text-paper-100"
                 aria-hidden="true"
               />
               Ver sitio público
@@ -281,17 +281,17 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
         <div className="relative border-t border-white/10 p-3.5">
           <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-3.5">
             <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-clay-300/20 text-[10px] font-bold text-clay-100">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-bronze-300/20 text-[10px] font-bold text-bronze-100">
                 {getInitials(displayName)}
               </span>
               <div className="min-w-0 flex-1">
-                <p className="truncate text-xs font-semibold text-cream-100">{displayName}</p>
-                <p className="mt-0.5 truncate text-[9px] text-cream-200/35">{userSubtitle}</p>
+                <p className="truncate text-xs font-semibold text-paper-100">{displayName}</p>
+                <p className="mt-0.5 truncate text-[9px] text-paper-200/35">{userSubtitle}</p>
               </div>
             </div>
 
             {isDemo ? (
-              <Badge variant="dark" className="mt-3 w-full justify-center border-clay-300/15 bg-clay-300/10 py-1.5 text-clay-100">
+              <Badge variant="dark" className="mt-3 w-full justify-center border-bronze-300/15 bg-bronze-300/10 py-1.5 text-bronze-100">
                 <Sparkles className="h-3 w-3" aria-hidden="true" />
                 Modo demostración
               </Badge>
@@ -299,21 +299,21 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
               <button
                 type="button"
                 onClick={handleSignOut}
-                className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-full border border-white/10 py-1.5 text-[10px] font-semibold text-cream-200/60 transition-colors hover:bg-white/[0.06] hover:text-cream-50"
+                className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-full border border-white/10 py-1.5 text-[10px] font-semibold text-paper-300/60 transition-colors hover:bg-white/[0.06] hover:text-paper-100"
               >
                 <LogOut className="h-3 w-3" aria-hidden="true" />
                 Cerrar sesión
               </button>
             )}
           </div>
-          <p className="mt-3 text-center text-[8px] uppercase tracking-[0.2em] text-cream-200/20">
+          <p className="mt-3 text-center text-[8px] uppercase tracking-[0.2em] text-paper-200/20">
             Serein Console · v1.0
           </p>
         </div>
       </aside>
 
       <div className="min-h-screen lg:pl-[264px]">
-        <header className="sticky top-0 z-30 border-b border-line/80 bg-cream-50/85 backdrop-blur-xl">
+        <header className="sticky top-0 z-30 border-b border-line/80 bg-paper-50/85 backdrop-blur-xl">
           <div className="mx-auto flex h-[4.5rem] max-w-[1500px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
             <div className="flex min-w-0 items-center gap-4">
               <div className="lg:hidden">
@@ -340,7 +340,7 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
 
               <a
                 href="#/"
-                className="hidden h-8 items-center gap-1 rounded-full px-2.5 text-[10px] font-semibold text-muted transition-colors hover:bg-cream-100 hover:text-forest-900 sm:inline-flex"
+                className="hidden h-8 items-center gap-1 rounded-full px-2.5 text-[10px] font-semibold text-muted transition-colors hover:bg-paper-100 hover:text-forest-900 sm:inline-flex"
               >
                 Ver sitio
                 <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
@@ -350,7 +350,7 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
                 <button
                   type="button"
                   onClick={handleSignOut}
-                  className="grid h-8 w-8 place-items-center rounded-full text-muted transition-colors hover:bg-cream-100 hover:text-forest-900 lg:hidden"
+                  className="grid h-8 w-8 place-items-center rounded-full text-muted transition-colors hover:bg-paper-100 hover:text-forest-900 lg:hidden"
                   aria-label="Cerrar sesión"
                   title="Cerrar sesión"
                 >
@@ -359,7 +359,7 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
               ) : null}
 
               <span
-                className="grid h-8 w-8 place-items-center rounded-full bg-forest-800 text-[9px] font-bold text-cream-50"
+                className="grid h-8 w-8 place-items-center rounded-full bg-forest-800 text-[9px] font-bold text-paper-50"
                 title={displayName}
               >
                 {getInitials(displayName)}
@@ -368,7 +368,7 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
           </div>
         </header>
 
-        <div className="sticky top-[4.5rem] z-20 flex gap-1 border-b border-line/80 bg-cream-50/90 px-4 py-2 backdrop-blur-xl lg:hidden">
+        <div className="sticky top-[4.5rem] z-20 flex gap-1 border-b border-line/80 bg-paper-50/90 px-4 py-2 backdrop-blur-xl lg:hidden">
           {NAV_ITEMS.map((item) => {
             const Icon = item.icon
             return (
@@ -380,8 +380,8 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
                 className={cn(
                   'inline-flex flex-1 items-center justify-center gap-2 rounded-full py-2 text-[11px] font-semibold transition-colors',
                   view === item.id
-                    ? 'bg-forest-800 text-cream-50'
-                    : 'text-muted hover:bg-cream-200/60 hover:text-forest-900',
+                    ? 'bg-forest-800 text-paper-50'
+                    : 'text-muted hover:bg-paper-200/60 hover:text-forest-900',
                 )}
               >
                 <Icon className="h-3.5 w-3.5" aria-hidden="true" />
@@ -399,8 +399,8 @@ export function AdminDashboard({ session, isDemo, onSignOut }) {
         <main className="mx-auto w-full max-w-[1500px] px-4 py-6 sm:px-6 lg:px-8 lg:py-9">
           <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.26em] text-clay-600">
-                <span className="h-px w-6 bg-clay-400" aria-hidden="true" />
+              <p className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.26em] text-bronze-600">
+                <span className="h-px w-6 bg-bronze-400" aria-hidden="true" />
                 {getGreeting()}, {displayName.split(' ')[0]}
               </p>
               <h1 className="mt-2 font-display text-4xl tracking-tight text-forest-950 sm:text-[2.75rem]">

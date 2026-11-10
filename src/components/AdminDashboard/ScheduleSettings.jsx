@@ -56,7 +56,7 @@ function SettingsCard({ icon: Icon, title, description, children }) {
   return (
     <section className="rounded-2xl border border-line bg-white p-5 shadow-soft sm:p-6">
       <div className="flex items-start gap-3">
-        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cream-100 text-forest-700">
+        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-paper-100 text-forest-700">
           <Icon className="h-4 w-4" aria-hidden="true" />
         </span>
         <div>
@@ -293,9 +293,9 @@ export function ScheduleSettings({ settings, isDemo, onSave }) {
                     aria-pressed={selected}
                     aria-label={day.full}
                     className={cn(
-                      'grid h-11 min-w-12 place-items-center rounded-xl border px-3 text-[11px] font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500/40',
+                      'grid h-11 min-w-12 place-items-center rounded-xl border px-3 text-[11px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500/40',
                       selected
-                        ? 'border-forest-800 bg-forest-800 text-cream-50 shadow-sm'
+                        ? 'border-forest-800 bg-forest-800 text-paper-50 shadow-sm'
                         : 'border-line bg-white text-muted hover:border-forest-200 hover:bg-forest-50',
                     )}
                   >
@@ -360,13 +360,13 @@ export function ScheduleSettings({ settings, isDemo, onSave }) {
                   {form.closed_dates.map((date) => (
                     <span
                       key={date}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-clay-200 bg-clay-50 py-1 pl-3 pr-1.5 text-[10px] font-semibold text-clay-700"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-paper-200 bg-paper-50 py-1 pl-3 pr-1.5 text-[10px] font-semibold text-forest-800"
                     >
                       {formatCompactDate(date)}
                       <button
                         type="button"
                         onClick={() => removeClosedDate(date)}
-                        className="grid h-5 w-5 place-items-center rounded-full text-clay-500 transition-colors hover:bg-clay-100 hover:text-clay-800"
+                        className="grid h-5 w-5 place-items-center rounded-full text-bronze-500 transition-colors hover:bg-paper-100 hover:text-bronze-800"
                         aria-label={`Quitar cierre del ${formatCompactDate(date)}`}
                       >
                         <X className="h-3 w-3" aria-hidden="true" />
@@ -375,7 +375,7 @@ export function ScheduleSettings({ settings, isDemo, onSave }) {
                   ))}
                 </div>
               ) : (
-                <div className="rounded-xl border border-dashed border-line bg-cream-50/50 px-4 py-5 text-center">
+                <div className="rounded-xl border border-dashed border-line bg-paper-50/50 px-4 py-5 text-center">
                   <p className="text-[11px] text-muted">
                     No hay cierres programados. La agenda sigue su horario habitual.
                   </p>
@@ -497,40 +497,40 @@ export function ScheduleSettings({ settings, isDemo, onSave }) {
             )}
           </SettingsCard>
 
-          <aside className="relative overflow-hidden rounded-2xl border border-white/10 bg-forest-950 p-5 text-cream-50 shadow-soft">
+          <aside className="relative overflow-hidden rounded-2xl border border-white/10 bg-forest-950 p-5 text-paper-50 shadow-soft">
             <div
               className="pointer-events-none absolute -right-12 -top-14 h-40 w-40 rounded-full border border-white/10"
               aria-hidden="true"
             />
             <div className="relative flex items-center justify-between">
-              <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-cream-200/50">
+              <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-paper-200/50">
                 Vista previa pública
               </p>
-              <Badge variant="dark" dot className="border-white/10 bg-white/5 text-cream-100">
+              <Badge variant="dark" dot className="border-white/10 bg-white/5 text-paper-100">
                 Activa
               </Badge>
             </div>
-            <p className="relative mt-4 font-display text-3xl tracking-tight text-cream-50">
-              {form.open_time || '—'} <span className="text-cream-200/35">—</span>{' '}
+            <p className="relative mt-4 font-display text-3xl tracking-tight text-paper-50">
+              {form.open_time || '—'} <span className="text-paper-200/35">—</span>{' '}
               {form.close_time || '—'}
             </p>
-            <p className="relative mt-1 text-[11px] leading-relaxed text-cream-200/55">
+            <p className="relative mt-1 text-[11px] leading-relaxed text-paper-200/55">
               {workingDayLabels.length ? workingDayLabels.join(' · ') : 'Sin días de apertura'}
             </p>
 
             <div className="relative mt-5 grid grid-cols-2 gap-3 border-t border-white/10 pt-4 text-[10px]">
-              <div className="flex items-start gap-2 text-cream-200/60">
-                <Timer className="mt-0.5 h-3.5 w-3.5 shrink-0 text-clay-300" aria-hidden="true" />
+              <div className="flex items-start gap-2 text-paper-200/60">
+                <Timer className="mt-0.5 h-3.5 w-3.5 shrink-0 text-bronze-300" aria-hidden="true" />
                 <span>Huecos cada {form.slot_interval_min} min</span>
               </div>
-              <div className="flex items-start gap-2 text-cream-200/60">
-                <CalendarDays className="mt-0.5 h-3.5 w-3.5 shrink-0 text-clay-300" aria-hidden="true" />
+              <div className="flex items-start gap-2 text-paper-200/60">
+                <CalendarDays className="mt-0.5 h-3.5 w-3.5 shrink-0 text-bronze-300" aria-hidden="true" />
                 <span>{form.booking_horizon_days} días de antelación</span>
               </div>
             </div>
 
             {form.closed_dates.length ? (
-              <p className="relative mt-3 text-[10px] text-cream-200/40">
+              <p className="relative mt-3 text-[10px] text-paper-200/40">
                 {form.closed_dates.length} cierre{form.closed_dates.length === 1 ? '' : 's'}{' '}
                 programado{form.closed_dates.length === 1 ? '' : 's'}
               </p>

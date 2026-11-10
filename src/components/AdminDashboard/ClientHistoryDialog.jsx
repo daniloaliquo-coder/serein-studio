@@ -78,7 +78,7 @@ function HistoryRow({ appointment, clientName }) {
       <span
         className={cn(
           'grid h-10 w-10 shrink-0 place-items-center rounded-xl',
-          cancelled ? 'bg-stone-100 text-stone-500' : 'bg-cream-50 text-forest-700',
+          cancelled ? 'bg-stone-100 text-stone-500' : 'bg-paper-50 text-forest-700',
         )}
         aria-hidden="true"
       >
@@ -306,7 +306,7 @@ export function ClientHistoryDialog({ client, businessName, onClose }) {
 
       {!loading && !error && !hasHistory ? (
         <div className="flex flex-col items-center justify-center rounded-2xl border border-line bg-white px-6 py-12 text-center">
-          <span className="grid h-12 w-12 place-items-center rounded-full bg-cream-100 text-muted">
+          <span className="grid h-12 w-12 place-items-center rounded-full bg-paper-100 text-muted">
             <CalendarX2 className="h-5 w-5" aria-hidden="true" />
           </span>
           <h3 className="mt-4 font-display text-xl text-forest-950">
@@ -364,7 +364,7 @@ export function ClientHistoryDialog({ client, businessName, onClose }) {
           ) : null}
 
           {upcoming.length === 0 && past.length > 0 ? (
-            <div className="flex items-center gap-2 rounded-xl border border-line/70 bg-cream-50/70 px-3.5 py-3 text-[11px] text-muted">
+            <div className="flex items-center gap-2 rounded-xl border border-line/70 bg-paper-50/70 px-3.5 py-3 text-[11px] text-muted">
               <CalendarClock className="h-3.5 w-3.5 text-forest-500" aria-hidden="true" />
               No hay próximas citas.
             </div>

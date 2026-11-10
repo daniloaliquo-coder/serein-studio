@@ -168,16 +168,16 @@ export function ConfirmationStep({
         </p>
 
         <div className="mx-auto mt-7 max-w-xl overflow-hidden rounded-2xl border border-line bg-white text-left shadow-soft">
-          <div className="flex items-center justify-between gap-4 border-b border-line/80 bg-forest-950 px-5 py-4 text-cream-50">
+          <div className="flex items-center justify-between gap-4 border-b border-line/80 bg-forest-950 px-5 py-4 text-paper-50">
             <div>
-              <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-cream-200/55">
+              <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-paper-200/55">
                 Tu cita
               </p>
               <p className="mt-1 font-display text-xl">{service.name}</p>
             </div>
             <StatusBadge
               status="pending"
-              className="border-white/15 bg-white/10 text-cream-100"
+              className="border-white/15 bg-white/10 text-paper-100"
             />
           </div>
           <dl className="divide-y divide-line/70">
@@ -243,7 +243,7 @@ export function ConfirmationStep({
   return (
     <div>
       <div>
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-clay-600">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-600">
           Paso 03 · Confirma tus datos
         </p>
         <h2 className="mt-2 font-display text-3xl tracking-tight text-forest-950 sm:text-4xl">
@@ -254,9 +254,9 @@ export function ConfirmationStep({
         </p>
       </div>
 
-      <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-line bg-cream-50/70 p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-line bg-paper-50/70 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-forest-800 text-cream-50">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-forest-800 text-paper-50">
             <Sparkles className="h-4 w-4" aria-hidden="true" />
           </span>
           <div>

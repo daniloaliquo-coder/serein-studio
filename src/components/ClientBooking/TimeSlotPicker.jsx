@@ -180,7 +180,7 @@ export function TimeSlotPicker({
     <div>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-clay-600">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-600">
             Paso 02 · Elige el momento
           </p>
           <h2 className="mt-2 font-display text-3xl tracking-tight text-forest-950 sm:text-4xl">
@@ -190,7 +190,7 @@ export function TimeSlotPicker({
             Los turnos se recalculan en tiempo real según la duración de cada servicio.
           </p>
         </div>
-        <Badge variant="clay" className="w-fit shrink-0 py-1.5">
+        <Badge variant="bronze" className="w-fit shrink-0 py-1.5">
           <Timer className="h-3 w-3" aria-hidden="true" />
           {formatDuration(service.duration_min)}
         </Badge>
@@ -214,7 +214,7 @@ export function TimeSlotPicker({
                 {formatMonthLabel(monthCursor)}
               </h3>
               {loading ? (
-                <Loader2 className="h-3.5 w-3.5 animate-spin text-clay-500" aria-label="Cargando disponibilidad" />
+                <Loader2 className="h-3.5 w-3.5 animate-spin text-bronze-500" aria-label="Cargando disponibilidad" />
               ) : null}
             </div>
 
@@ -258,20 +258,20 @@ export function TimeSlotPicker({
                     aria-label={`${formatLongDate(cell.dateKey)}${reason ? `, ${reason}` : ''}`}
                     title={reason || undefined}
                     className={cn(
-                      'relative grid h-10 w-10 place-items-center rounded-full text-sm font-medium tabular-nums transition-all',
+                      'relative grid h-10 w-10 place-items-center rounded-full text-sm font-medium tabular-nums transition-colors',
                       !cell.inCurrentMonth && 'invisible',
                       cell.selected && cell.inCurrentMonth
-                        ? 'bg-forest-800 text-cream-50 shadow-md'
+                        ? 'bg-forest-800 text-paper-50 shadow-md'
                         : disabled
                           ? 'cursor-not-allowed text-muted/25'
-                          : 'text-forest-900 hover:bg-clay-100/80',
-                      cell.today && !cell.selected && cell.inCurrentMonth && 'ring-1 ring-clay-300',
+                          : 'text-forest-900 hover:bg-paper-100/80',
+                      cell.today && !cell.selected && cell.inCurrentMonth && 'ring-1 ring-paper-300',
                     )}
                   >
                     {cell.date.getDate()}
                     {cell.available && !loading && !error && !cell.selected ? (
                       <span
-                        className="absolute bottom-1 h-1 w-1 rounded-full bg-clay-400"
+                        className="absolute bottom-1 h-1 w-1 rounded-full bg-bronze-400"
                         aria-hidden="true"
                       />
                     ) : null}
@@ -283,7 +283,7 @@ export function TimeSlotPicker({
 
           <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line/80 pt-4 text-[10px] text-muted">
             <span className="inline-flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-clay-400" aria-hidden="true" />
+              <span className="h-1.5 w-1.5 rounded-full bg-bronze-400" aria-hidden="true" />
               Con huecos
             </span>
             <span className="inline-flex items-center gap-1.5">
@@ -291,7 +291,7 @@ export function TimeSlotPicker({
               Sin disponibilidad
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <span className="h-3.5 w-3.5 rounded-full ring-1 ring-clay-300" aria-hidden="true" />
+              <span className="h-3.5 w-3.5 rounded-full ring-1 ring-paper-300" aria-hidden="true" />
               Hoy
             </span>
           </div>
@@ -323,8 +323,8 @@ export function TimeSlotPicker({
 
           <div className="mt-5">
             {!selectedDate ? (
-              <div className="flex min-h-[15rem] flex-col items-center justify-center rounded-2xl border border-dashed border-line bg-cream-50/60 px-6 text-center">
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-clay-500 shadow-sm">
+              <div className="flex min-h-[15rem] flex-col items-center justify-center rounded-2xl border border-dashed border-line bg-paper-50/60 px-6 text-center">
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-bronze-500 shadow-sm">
                   <CalendarDays className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <p className="mt-4 text-sm font-semibold text-forest-900">Tu día empieza aquí</p>
@@ -357,15 +357,15 @@ export function TimeSlotPicker({
                 </Button>
               </div>
             ) : slots.length === 0 ? (
-              <div className="flex min-h-[15rem] flex-col items-center justify-center rounded-2xl border border-dashed border-line bg-cream-50/60 px-6 text-center">
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-clay-500 shadow-sm">
+              <div className="flex min-h-[15rem] flex-col items-center justify-center rounded-2xl border border-dashed border-line bg-paper-50/60 px-6 text-center">
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-bronze-500 shadow-sm">
                   <CalendarX2 className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <p className="mt-4 text-sm font-semibold text-forest-900">
                   No quedan turnos este día
                 </p>
                 <p className="mt-1 max-w-[15rem] text-xs leading-relaxed text-muted">
-                  Prueba otra fecha: los días con puntos terracota todavía tienen
+                  Prueba otra fecha: los días con puntos bronce todavía tienen
                   disponibilidad.
                 </p>
               </div>
@@ -374,7 +374,7 @@ export function TimeSlotPicker({
                 {morningSlots.length ? (
                   <div>
                     <p className="mb-2.5 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
-                      <Sun className="h-3.5 w-3.5 text-gold-500" aria-hidden="true" />
+                      <Sun className="h-3.5 w-3.5 text-bronze-500" aria-hidden="true" />
                       Mañana
                     </p>
                     <div className="grid grid-cols-3 gap-2">
@@ -394,7 +394,7 @@ export function TimeSlotPicker({
                 {afternoonSlots.length ? (
                   <div>
                     <p className="mb-2.5 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
-                      <Sunset className="h-3.5 w-3.5 text-clay-500" aria-hidden="true" />
+                      <Sunset className="h-3.5 w-3.5 text-bronze-500" aria-hidden="true" />
                       Tarde
                     </p>
                     <div className="grid grid-cols-3 gap-2">
@@ -413,7 +413,7 @@ export function TimeSlotPicker({
 
                 {selectedTime ? (
                   <div className="flex items-center gap-2.5 rounded-xl border border-forest-100 bg-forest-50/70 px-3.5 py-3 text-xs text-forest-800">
-                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-forest-800 text-cream-50">
+                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-forest-800 text-paper-50">
                       <Check className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
                     <p>
@@ -450,10 +450,10 @@ function TimeButton({ slot, selected, duration, onSelect }) {
       onClick={onSelect}
       aria-pressed={selected}
       className={cn(
-        'flex h-11 flex-col items-center justify-center rounded-xl border text-xs font-semibold tabular-nums transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500/40 focus-visible:ring-offset-1',
+        'flex h-11 flex-col items-center justify-center rounded-xl border text-xs font-semibold tabular-nums transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500/40 focus-visible:ring-offset-1',
         selected
-          ? 'border-forest-800 bg-forest-800 text-cream-50 shadow-sm'
-          : 'border-line bg-white text-forest-900 hover:border-clay-300 hover:bg-clay-50',
+          ? 'border-forest-800 bg-forest-800 text-paper-50 shadow-sm'
+          : 'border-line bg-white text-forest-900 hover:border-paper-300 hover:bg-paper-50',
       )}
       title={`${slot.value} – ${end}`}
     >
@@ -461,7 +461,7 @@ function TimeButton({ slot, selected, duration, onSelect }) {
       <span
         className={cn(
           'mt-0.5 text-[8px] font-medium',
-          selected ? 'text-cream-200/70' : 'text-muted/55',
+          selected ? 'text-paper-200/70' : 'text-muted/55',
         )}
       >
         hasta {end}

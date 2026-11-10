@@ -56,7 +56,7 @@ export function Dialog({
         aria-labelledby={titleId}
         aria-describedby={description ? descriptionId : undefined}
         className={cn(
-          'relative z-10 max-h-[92vh] w-full max-w-lg animate-scale-in overflow-y-auto rounded-3xl border border-white/70 bg-cream-50 shadow-float',
+          'relative z-10 max-h-[92vh] w-full max-w-lg animate-scale-in overflow-y-auto rounded-3xl border border-white/70 bg-paper-50 shadow-float',
           className,
         )}
       >
@@ -75,7 +75,7 @@ export function Dialog({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-muted transition-colors hover:bg-cream-200 hover:text-forest-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500/30"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-muted transition-colors hover:bg-paper-200 hover:text-forest-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500/30"
             aria-label="Cerrar"
           >
             <X className="h-4 w-4" aria-hidden="true" />

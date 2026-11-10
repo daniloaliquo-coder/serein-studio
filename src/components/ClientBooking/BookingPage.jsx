@@ -62,60 +62,39 @@ function getWorkingDaysLabel(workingDays = []) {
 function HeroVisual({ settings }) {
   return (
     <div className="relative mx-auto w-full max-w-[430px] animate-fade-up [animation-delay:140ms]">
-      <div
-        className="absolute -inset-3 rotate-[1.5deg] rounded-[3rem] bg-gradient-to-br from-clay-200/80 via-cream-200 to-forest-200/70"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute -right-7 -top-7 hidden h-28 w-28 rounded-full border border-clay-300/40 sm:block"
-        aria-hidden="true"
-      />
-
-      <div className="noise relative aspect-[4/5] overflow-hidden rounded-[2.75rem] border border-white/60 bg-forest-950 p-6 shadow-float sm:p-8">
-        <div className="absolute inset-0" aria-hidden="true">
-          <div className="absolute -right-20 -top-16 h-72 w-72 rounded-full bg-clay-400/25 blur-3xl" />
-          <div className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-forest-400/30 blur-3xl" />
-          <div className="absolute left-1/2 top-1/2 h-[21rem] w-[21rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cream-100/10" />
-          <div className="absolute left-1/2 top-1/2 h-[15rem] w-[15rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-clay-200/15" />
-          <div className="absolute left-1/2 top-1/2 h-[9rem] w-[9rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-clay-400/10 blur-2xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(255,255,255,0.06),transparent_55%)]" />
-        </div>
-
-        <div className="relative flex h-full flex-col justify-between text-cream-50">
-          <div className="flex items-center justify-between text-[9px] font-semibold uppercase tracking-[0.3em] text-cream-200/55">
-            <span>Rituales · Estudio</span>
+      <div className="aspect-[4/5] overflow-hidden rounded-[3rem] border border-line bg-forest-950 p-6 shadow-card sm:p-8">
+        <div className="relative flex h-full flex-col justify-between text-paper-50">
+          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.28em] text-paper-300/55">
+            <span>Serein Studio</span>
             <span>Madrid</span>
           </div>
 
           <div className="relative mx-auto text-center">
-            <span className="mx-auto mb-5 grid h-10 w-10 place-items-center rounded-full border border-cream-100/20 bg-white/5">
-              <Sparkles className="h-4 w-4 text-clay-200" strokeWidth={1.5} aria-hidden="true" />
+            <span className="mx-auto mb-6 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/10">
+              <Sparkles className="h-5 w-5 text-paper-300" strokeWidth={1.5} aria-hidden="true" />
             </span>
-            <p className="font-display text-[2.35rem] font-light italic leading-[1.08] tracking-tight text-cream-50 sm:text-[2.75rem]">
+            <p className="font-display text-[2.5rem] font-light italic leading-[1.08] tracking-tight text-paper-50 sm:text-[3rem]">
               Cuida de ti,
               <br />
               sin complicarte.
             </p>
-            <p className="mx-auto mt-4 max-w-[14rem] text-[9px] font-semibold uppercase leading-relaxed tracking-[0.28em] text-cream-200/45">
-              Reserva online · Sin llamadas
-            </p>
           </div>
 
-          <div className="rounded-2xl border border-white/15 bg-white/10 p-3.5 backdrop-blur-md">
+          <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
             <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cream-100 text-forest-900">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-paper-50 text-forest-900">
                 <CalendarCheck2 className="h-4 w-4" aria-hidden="true" />
               </span>
               <div className="min-w-0 flex-1">
-                <p className="text-[11px] font-semibold text-cream-50">Tu próxima cita</p>
-                <p className="mt-0.5 text-[9px] text-cream-200/55">
+                <p className="text-[11px] font-semibold text-paper-50">Tu próxima cita</p>
+                <p className="mt-0.5 text-[10px] text-paper-300/55">
                   {getWorkingDaysLabel(settings.working_days)} · {normalizeTime(settings.open_time)}–
                   {normalizeTime(settings.close_time)}
                 </p>
               </div>
               <a
                 href="#reservar"
-                className="grid h-8 w-8 place-items-center rounded-full border border-white/10 bg-white/10 text-cream-50 transition-colors hover:bg-white/20"
+                className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/10 text-paper-50 transition-colors hover:bg-white/20"
                 aria-label="Ir a reservar"
               >
                 <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -125,21 +104,21 @@ function HeroVisual({ settings }) {
         </div>
       </div>
 
-      <div className="absolute -bottom-5 -left-3 flex items-center gap-2.5 rounded-2xl border border-white bg-white/95 px-3.5 py-3 shadow-float backdrop-blur sm:-left-8">
-        <span className="grid h-8 w-8 place-items-center rounded-full bg-[#128C7E]/10 text-[#128C7E]">
+      <div className="absolute -bottom-5 -left-3 flex items-center gap-2.5 rounded-2xl border border-line bg-white px-3.5 py-3 shadow-card sm:-left-8">
+        <span className="grid h-9 w-9 place-items-center rounded-full bg-[#128C7E]/10 text-[#128C7E]">
           <MessageCircle className="h-4 w-4" aria-hidden="true" />
         </span>
         <div>
-          <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-muted">
+          <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-muted">
             Confirmación
           </p>
-          <p className="text-[11px] font-semibold text-forest-950">Directo por WhatsApp</p>
+          <p className="text-[11px] font-semibold text-ink">Directo por WhatsApp</p>
         </div>
       </div>
 
-      <div className="absolute -right-4 top-16 hidden items-center gap-2 rounded-full border border-white bg-white/90 px-3.5 py-2.5 shadow-soft backdrop-blur sm:flex">
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
-        <span className="text-[10px] font-semibold text-forest-800">Agenda en tiempo real</span>
+      <div className="absolute -right-4 top-16 hidden items-center gap-2 rounded-full border border-line bg-white px-3.5 py-2.5 shadow-soft sm:flex">
+        <span className="h-1.5 w-1.5 rounded-full bg-forest-600" aria-hidden="true" />
+        <span className="text-[10px] font-semibold text-ink">Agenda en tiempo real</span>
       </div>
     </div>
   )
@@ -208,12 +187,12 @@ export function BookingPage() {
     <div id="top" className="relative overflow-x-clip">
       <a
         href="#reservar"
-        className="sr-only z-[60] rounded-full bg-forest-900 px-4 py-2 text-sm text-cream-50 focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        className="sr-only z-[60] rounded-full bg-forest-900 px-4 py-2 text-sm text-paper-50 focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
       >
         Saltar a reservas
       </a>
 
-      <header className="sticky top-0 z-40 border-b border-line/60 bg-cream-50/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-line/60 bg-paper-50/80 backdrop-blur-xl">
         <div className="mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-5 px-5 lg:px-8">
           <a href="#top" aria-label={`${settings.business_name}, inicio`}>
             <Brand name={settings.business_name} />
@@ -256,7 +235,7 @@ export function BookingPage() {
       <main>
         <section className="relative overflow-hidden">
           <div
-            className="pointer-events-none absolute -left-40 top-16 h-[28rem] w-[28rem] rounded-full bg-clay-100/50 blur-3xl"
+            className="pointer-events-none absolute -left-40 top-16 h-[28rem] w-[28rem] rounded-full bg-bronze-100/50 blur-3xl"
             aria-hidden="true"
           />
           <div
@@ -267,7 +246,7 @@ export function BookingPage() {
           <div className="relative mx-auto grid max-w-6xl gap-14 px-5 pb-16 pt-12 sm:pt-16 lg:grid-cols-[1.06fr_0.94fr] lg:items-center lg:gap-16 lg:px-8 lg:pb-24 lg:pt-20">
             <div className="animate-fade-up">
               <div className="inline-flex items-center gap-2.5 rounded-full border border-line/80 bg-white/60 py-1.5 pl-2 pr-3.5 backdrop-blur-sm">
-                <span className="rounded-full bg-forest-800 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.18em] text-cream-50">
+                <span className="rounded-full bg-forest-800 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.18em] text-paper-50">
                   Estudio boutique
                 </span>
                 <span className="text-[10px] font-semibold text-muted">
@@ -277,7 +256,7 @@ export function BookingPage() {
 
               <h1 className="mt-6 max-w-2xl text-balance font-display text-[clamp(3rem,7.2vw,5.15rem)] leading-[0.94] tracking-[-0.04em] text-forest-950">
                 Un momento para ti,
-                <span className="block font-light italic text-clay-500">
+                <span className="block font-light italic text-bronze-500">
                   perfectamente reservado.
                 </span>
               </h1>
@@ -308,12 +287,12 @@ export function BookingPage() {
                 </div>
               </div>
 
-              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-line/80 pt-6 text-[11px] font-medium text-muted">
-                <span className="inline-flex items-center gap-1.5">
+              <div className="mt-10 flex items-center gap-5 border-t border-line/80 pt-6 text-[11px] font-medium text-muted">
+                <span className="flex items-center gap-1.5">
                   <Check className="h-3.5 w-3.5 text-forest-500" aria-hidden="true" />
                   Agenda actualizada al momento
                 </span>
-                <span className="inline-flex items-center gap-1.5">
+                <span className="flex items-center gap-1.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-forest-500" aria-hidden="true" />
                   Tus datos, solo para tu cita
                 </span>
@@ -328,23 +307,24 @@ export function BookingPage() {
           id="como-funciona"
           className="scroll-mt-24 border-y border-line/70 bg-white/45"
         >
-          <div className="mx-auto grid max-w-6xl divide-y divide-line/70 px-5 md:grid-cols-3 md:divide-x md:divide-y-0 lg:px-8">
-            {PUBLIC_FEATURES.map((feature, index) => {
+          <div className="mx-auto grid max-w-6xl gap-16 px-5 md:grid-cols-3 lg:px-8">
+            {PUBLIC_FEATURES.map((feature) => {
               const Icon = feature.icon
               return (
                 <div
                   key={feature.title}
-                  className="flex items-start gap-4 py-7 md:px-7 md:py-8 md:first:pl-0 md:last:pr-0"
+                  className="flex items-start gap-5 py-10 md:px-8 md:py-12"
                 >
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-line bg-cream-50 text-forest-700">
-                    <Icon className="h-4 w-4" aria-hidden="true" strokeWidth={1.7} />
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-line bg-forest-50/40 text-forest-700">
+                    <Icon className="h-5 w-5" aria-hidden="true" strokeWidth={1.7} />
                   </span>
                   <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-clay-600">
-                      0{index + 1}
+                    <h2 className="mt-1 font-display text-xl leading-tight tracking-tight text-forest-950">
+                      {feature.title}
+                    </h2>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                      {feature.description}
                     </p>
-                    <h2 className="mt-1 text-sm font-semibold text-forest-950">{feature.title}</h2>
-                    <p className="mt-1 text-xs leading-relaxed text-muted">{feature.description}</p>
                   </div>
                 </div>
               )
@@ -359,8 +339,8 @@ export function BookingPage() {
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-clay-600">
-                  <span className="h-px w-8 bg-clay-400" aria-hidden="true" />
+                <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-600">
+                  <span className="h-px w-8 bg-bronze-400" aria-hidden="true" />
                   Agenda online
                 </p>
                 <h2 className="mt-3 text-balance font-display text-4xl tracking-tight text-forest-950 sm:text-5xl">
@@ -433,29 +413,29 @@ export function BookingPage() {
         </section>
 
         <section id="estudio" className="scroll-mt-24 px-5 pb-16 lg:px-8 lg:pb-20">
-          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-forest-950 p-7 text-cream-50 shadow-float sm:p-10 lg:p-14">
+          <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-forest-950 p-7 text-paper-50 shadow-float sm:p-10 lg:p-14">
             <div className="noise pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden="true" />
             <div
-              className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full border border-cream-100/10"
+              className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full border border-paper-100/10"
               aria-hidden="true"
             />
             <div
-              className="pointer-events-none absolute -right-4 top-10 h-52 w-52 rounded-full bg-clay-400/10 blur-3xl"
+              className="pointer-events-none absolute -right-4 top-10 h-52 w-52 rounded-full bg-bronze-400/10 blur-3xl"
               aria-hidden="true"
             />
 
             <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-clay-300/80">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-300/80">
                   El estudio
                 </p>
                 <h2 className="mt-4 max-w-xl text-balance font-display text-3xl leading-[1.08] tracking-tight sm:text-4xl">
                   Un espacio pequeño.
-                  <span className="block font-light italic text-clay-200">
+                  <span className="block font-light italic text-bronze-200">
                     Una atención sin atajos.
                   </span>
                 </h2>
-                <p className="mt-5 max-w-lg text-sm leading-relaxed text-cream-200/60">
+                <p className="mt-5 max-w-lg text-sm leading-relaxed text-paper-200/60">
                   Trabajamos con agenda limitada y tiempos reales. Cada cita incluye una breve
                   consulta y el espacio necesario para que salgas exactamente como querías.
                 </p>
@@ -474,28 +454,28 @@ export function BookingPage() {
 
               <div className="grid gap-5 self-end rounded-2xl border border-white/10 bg-white/[0.045] p-5 backdrop-blur-sm sm:grid-cols-2 lg:grid-cols-1">
                 <div className="flex items-start gap-3">
-                  <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-clay-300" aria-hidden="true" />
+                  <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-bronze-300" aria-hidden="true" />
                   <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-cream-200/45">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-paper-200/45">
                       Horario
                     </p>
-                    <p className="mt-1 text-sm text-cream-100">
+                    <p className="mt-1 text-sm text-paper-100">
                       {capitalizeFirst(getWorkingDaysLabel(settings.working_days))}
                     </p>
-                    <p className="text-xs text-cream-200/55">
+                    <p className="text-xs text-paper-200/55">
                       {normalizeTime(settings.open_time)} — {normalizeTime(settings.close_time)}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-clay-300" aria-hidden="true" />
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-bronze-300" aria-hidden="true" />
                   <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-cream-200/45">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-paper-200/45">
                       Visítanos
                     </p>
-                    <p className="mt-1 text-sm text-cream-100">{BUSINESS_PROFILE.address}</p>
-                    <p className="text-xs text-cream-200/55">{BUSINESS_PROFILE.city}</p>
+                    <p className="mt-1 text-sm text-paper-100">{BUSINESS_PROFILE.address}</p>
+                    <p className="text-xs text-paper-200/55">{BUSINESS_PROFILE.city}</p>
                   </div>
                 </div>
 
@@ -504,9 +484,9 @@ export function BookingPage() {
                     href={contactUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-cream-100 transition-colors hover:text-clay-200 sm:col-span-2 lg:col-span-1"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-paper-100 transition-colors hover:text-paper-200 sm:col-span-2 lg:col-span-1"
                   >
-                    <MessageCircle className="h-4 w-4 text-clay-300" aria-hidden="true" />
+                    <MessageCircle className="h-4 w-4 text-bronze-300" aria-hidden="true" />
                     Hablemos por WhatsApp
                     <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </a>
@@ -517,7 +497,7 @@ export function BookingPage() {
         </section>
       </main>
 
-      <footer className="border-t border-line/80 bg-cream-100/40">
+      <footer className="border-t border-line/80 bg-paper-100/40">
         <div className="mx-auto max-w-6xl px-5 py-10 lg:px-8">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
             <div>
@@ -532,10 +512,10 @@ export function BookingPage() {
                 <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted/60">
                   Reservas
                 </p>
-                <a href="#reservar" className="block font-medium text-forest-900 hover:text-clay-600">
+                <a href="#reservar" className="block font-medium text-forest-900 hover:text-bronze-600">
                   Rituales y precios
                 </a>
-                <a href="#como-funciona" className="block font-medium text-forest-900 hover:text-clay-600">
+                <a href="#como-funciona" className="block font-medium text-forest-900 hover:text-bronze-600">
                   Cómo funciona
                 </a>
               </div>
@@ -549,7 +529,7 @@ export function BookingPage() {
                 </p>
                 <a
                   href="#/admin"
-                  className="inline-flex items-center gap-1 font-medium text-forest-900 hover:text-clay-600"
+                  className="inline-flex items-center gap-1 font-medium text-forest-900 hover:text-bronze-600"
                 >
                   Acceso al panel
                   <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
@@ -564,8 +544,8 @@ export function BookingPage() {
             </p>
             <div className="flex items-center gap-3">
               {isDemoMode ? (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-clay-200 bg-clay-50 px-2.5 py-1 font-semibold text-clay-700">
-                  <span className="h-1.5 w-1.5 rounded-full bg-clay-400" aria-hidden="true" />
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-paper-200 bg-paper-100 px-2.5 py-1 font-semibold text-forest-800">
+                  <span className="h-1.5 w-1.5 rounded-full bg-paper-300" aria-hidden="true" />
                   Modo demostración · datos locales
                 </span>
               ) : (

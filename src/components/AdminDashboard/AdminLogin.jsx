@@ -44,19 +44,19 @@ export function AdminLogin({ onLogin }) {
   }
 
   return (
-    <div className="grid min-h-screen bg-cream-50 lg:grid-cols-[1.02fr_0.98fr]">
-      <section className="relative hidden overflow-hidden bg-forest-950 p-12 text-cream-50 lg:flex lg:flex-col lg:justify-between xl:p-16">
+    <div className="grid min-h-screen bg-paper-50 lg:grid-cols-[1.02fr_0.98fr]">
+      <section className="relative hidden overflow-hidden bg-forest-950 p-12 text-paper-50 lg:flex lg:flex-col lg:justify-between xl:p-16">
         <div className="noise pointer-events-none absolute inset-0 opacity-[0.055]" aria-hidden="true" />
         <div
-          className="pointer-events-none absolute -left-24 top-1/4 h-96 w-96 rounded-full border border-cream-100/10"
+          className="pointer-events-none absolute -left-24 top-1/4 h-96 w-96 rounded-full border border-paper-100/10"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-clay-400/15 blur-3xl"
+          className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-bronze-400/15 blur-3xl"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -bottom-32 -right-20 h-96 w-96 rounded-full border border-cream-100/10"
+          className="pointer-events-none absolute -bottom-32 -right-20 h-96 w-96 rounded-full border border-paper-100/10"
           aria-hidden="true"
         />
 
@@ -65,15 +65,15 @@ export function AdminLogin({ onLogin }) {
         </div>
 
         <div className="relative max-w-md py-16">
-          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-clay-300/80">
-            <span className="h-px w-8 bg-clay-300/50" aria-hidden="true" />
+          <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-300/80">
+            <span className="h-px w-8 bg-bronze-300/50" aria-hidden="true" />
             Panel de gestión
           </p>
           <h1 className="mt-5 text-balance font-display text-5xl leading-[0.98] tracking-tight xl:text-6xl">
             Tu agenda,
-            <span className="block font-light italic text-clay-200">más clara que nunca.</span>
+            <span className="block font-light italic text-bronze-200">más clara que nunca.</span>
           </h1>
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream-200/60">
+          <p className="mt-6 max-w-sm text-sm leading-relaxed text-paper-200/60">
             Reservas, confirmaciones y disponibilidad en un único lugar. Todo lo que necesitas
             para cuidar de tu estudio y de tu tiempo.
           </p>
@@ -87,17 +87,17 @@ export function AdminLogin({ onLogin }) {
               const Icon = item.icon
               return (
                 <div key={item.text} className="flex items-center gap-3">
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-clay-200">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-paper-300">
                     <Icon className="h-3.5 w-3.5" aria-hidden="true" />
                   </span>
-                  <p className="text-xs text-cream-100/80">{item.text}</p>
+                  <p className="text-xs text-paper-100/80">{item.text}</p>
                 </div>
               )
             })}
           </div>
         </div>
 
-        <p className="relative flex items-center gap-2 text-[10px] text-cream-200/40">
+        <p className="relative flex items-center gap-2 text-[10px] text-paper-200/40">
           <LockKeyhole className="h-3.5 w-3.5" aria-hidden="true" />
           Espacio privado · {DEFAULT_SETTINGS.business_name}
         </p>
@@ -181,7 +181,7 @@ export function AdminLogin({ onLogin }) {
                       type="button"
                       onClick={() => setShowPassword((value) => !value)}
                       aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
-                      className="absolute right-2.5 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full text-muted transition-colors hover:bg-cream-100 hover:text-forest-900"
+                      className="absolute right-2.5 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full text-muted transition-colors hover:bg-paper-100 hover:text-forest-900"
                     >
                       {showPassword ? (
                         <EyeOff className="h-3.5 w-3.5" aria-hidden="true" />

@@ -16,8 +16,8 @@ export function Brand({ name = 'Serein Studio', variant = 'light', size = 'defau
           'grid shrink-0 place-items-center rounded-full border font-display shadow-sm',
           isSmall ? 'h-9 w-9 text-base' : 'h-11 w-11 text-xl',
           isDark
-            ? 'border-white/15 bg-cream-100 text-forest-950'
-            : 'border-forest-800/10 bg-forest-800 text-cream-50',
+            ? 'border-white/15 bg-paper-100 text-forest-950'
+            : 'border-forest-800/10 bg-forest-800 text-paper-50',
         )}
         aria-hidden="true"
       >
@@ -28,7 +28,7 @@ export function Brand({ name = 'Serein Studio', variant = 'light', size = 'defau
           className={cn(
             'block font-display font-medium tracking-[0.16em] uppercase',
             isSmall ? 'text-lg' : 'text-xl',
-            isDark ? 'text-cream-50' : 'text-forest-950',
+            isDark ? 'text-paper-50' : 'text-forest-950',
           )}
         >
           {primary}
@@ -36,7 +36,7 @@ export function Brand({ name = 'Serein Studio', variant = 'light', size = 'defau
         <span
           className={cn(
             'mt-1 block text-[8px] font-semibold uppercase tracking-[0.38em]',
-            isDark ? 'text-cream-300/70' : 'text-muted',
+            isDark ? 'text-paper-300/70' : 'text-muted',
           )}
         >
           {secondary}

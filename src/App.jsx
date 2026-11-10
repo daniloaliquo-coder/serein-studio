@@ -14,7 +14,7 @@ function getRoute() {
 
 function AuthLoadingScreen() {
   return (
-    <div className="grid min-h-screen place-items-center bg-cream-50 px-6">
+    <div className="grid min-h-screen place-items-center bg-paper-50 px-6">
       <div className="flex flex-col items-center text-center">
         <Brand name="Serein Studio" />
         <div className="mt-7 flex items-center gap-2.5 rounded-full border border-line bg-white px-4 py-2 text-[11px] font-semibold text-muted shadow-soft">

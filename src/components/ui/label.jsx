@@ -7,7 +7,7 @@ export function Label({ className, children, required = false, ...props }) {
       {...props}
     >
       {children}
-      {required ? <span className="ml-1 text-clay-500">*</span> : null}
+      {required ? <span className="ml-1 text-bronze-500">*</span> : null}
     </label>
   )
 }

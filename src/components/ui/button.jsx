@@ -4,25 +4,25 @@ import { Loader2 } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
 export const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-50 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-50 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         primary:
-          'bg-forest-800 text-cream-50 shadow-sm hover:bg-forest-900 hover:shadow-md active:translate-y-px',
+          'bg-forest-800 text-paper-50 shadow-sm hover:bg-forest-900 hover:shadow-md active:translate-y-px',
         clay:
-          'bg-clay-500 text-white shadow-sm hover:bg-clay-600 hover:shadow-md active:translate-y-px',
+          'bg-bronze-500 text-white shadow-sm hover:bg-bronze-600 hover:shadow-md active:translate-y-px',
         outline:
           'border border-line bg-white text-forest-900 hover:border-forest-200 hover:bg-forest-50',
         ghost: 'text-forest-700 hover:bg-forest-50 hover:text-forest-900',
-        soft: 'bg-cream-100 text-forest-800 hover:bg-cream-200',
+        soft: 'bg-paper-100 text-forest-800 hover:bg-paper-200',
         success:
           'bg-emerald-600 text-white shadow-sm hover:bg-emerald-700 active:translate-y-px',
         danger:
           'border border-red-200 bg-white text-red-600 hover:bg-red-50',
         whatsapp:
           'bg-[#128C7E] text-white shadow-sm hover:bg-[#0B6B60] active:translate-y-px',
-        dark: 'bg-forest-950 text-cream-50 hover:bg-forest-900',
+        dark: 'bg-forest-950 text-paper-50 hover:bg-forest-900',
         link: 'h-auto rounded-none p-0 text-forest-700 underline-offset-4 hover:underline',
       },
       size: {

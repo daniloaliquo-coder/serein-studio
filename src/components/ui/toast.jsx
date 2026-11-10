@@ -50,7 +50,7 @@ function ToastItem({ item, onDismiss }) {
       <button
         type="button"
         onClick={() => onDismiss(item.id)}
-        className="rounded-full p-1 text-muted transition-colors hover:bg-cream-100 hover:text-forest-900"
+        className="rounded-full p-1 text-muted transition-colors hover:bg-paper-100 hover:text-forest-900"
         aria-label="Cerrar notificación"
       >
         <X className="h-3.5 w-3.5" aria-hidden="true" />

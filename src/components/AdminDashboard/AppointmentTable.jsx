@@ -55,9 +55,9 @@ const STATUS_OPTIONS = [
 
 const AVATAR_TONES = [
   'bg-forest-100 text-forest-800',
-  'bg-clay-100 text-clay-700',
-  'bg-gold-100 text-gold-600',
-  'bg-cream-200 text-forest-700',
+  'bg-paper-200 text-forest-700',
+  'bg-bronze-100 text-bronze-600',
+  'bg-paper-200 text-forest-700',
 ]
 
 function avatarTone(name = '') {
@@ -274,7 +274,7 @@ export function AppointmentTable({
     <div className="space-y-4">
       <div className="rounded-2xl border border-line bg-white p-3 shadow-soft sm:p-4">
         <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
-          <div className="flex w-fit max-w-full items-center gap-1 overflow-x-auto rounded-full bg-cream-100 p-1 scrollbar-none">
+          <div className="flex w-fit max-w-full items-center gap-1 overflow-x-auto rounded-full bg-paper-100 p-1 scrollbar-none">
             {PERIODS.map((period) => (
               <button
                 key={period.id}
@@ -282,7 +282,7 @@ export function AppointmentTable({
                 onClick={() => onFilterChange(period.id)}
                 aria-pressed={filter === period.id}
                 className={cn(
-                  'inline-flex shrink-0 items-center gap-2 rounded-full px-3.5 py-2 text-[11px] font-semibold transition-all',
+                  'inline-flex shrink-0 items-center gap-2 rounded-full px-3.5 py-2 text-[11px] font-semibold transition-colors',
                   filter === period.id
                     ? 'bg-white text-forest-950 shadow-sm'
                     : 'text-muted hover:text-forest-900',
@@ -293,7 +293,7 @@ export function AppointmentTable({
                   className={cn(
                     'grid h-5 min-w-5 place-items-center rounded-full px-1 text-[9px] tabular-nums',
                     filter === period.id
-                      ? 'bg-forest-800 text-cream-50'
+                      ? 'bg-forest-800 text-paper-50'
                       : 'bg-white/70 text-muted',
                   )}
                 >
@@ -336,7 +336,7 @@ export function AppointmentTable({
               <button
                 type="button"
                 onClick={clearFilters}
-                className="inline-flex h-10 items-center justify-center gap-1 rounded-full px-3 text-[10px] font-semibold text-muted transition-colors hover:bg-cream-100 hover:text-forest-900"
+                className="inline-flex h-10 items-center justify-center gap-1 rounded-full px-3 text-[10px] font-semibold text-muted transition-colors hover:bg-paper-100 hover:text-forest-900"
               >
                 <X className="h-3 w-3" aria-hidden="true" />
                 Limpiar
@@ -348,7 +348,7 @@ export function AppointmentTable({
 
       {groups.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-2xl border border-line bg-white px-6 py-16 text-center shadow-soft">
-          <span className="grid h-14 w-14 place-items-center rounded-full bg-cream-100 text-muted">
+          <span className="grid h-14 w-14 place-items-center rounded-full bg-paper-100 text-muted">
             <CalendarX2 className="h-6 w-6" aria-hidden="true" />
           </span>
           <h3 className="mt-5 font-display text-2xl tracking-tight text-forest-950">
@@ -380,13 +380,13 @@ export function AppointmentTable({
               className="overflow-hidden rounded-2xl border border-line bg-white shadow-soft"
               aria-label={`Reservas del ${formatGroupDate(dateKey)}`}
             >
-              <div className="flex flex-col gap-3 border-b border-line/80 bg-cream-50/55 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
+              <div className="flex flex-col gap-3 border-b border-line/80 bg-paper-50/55 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
                 <div className="flex flex-wrap items-center gap-2.5">
                   <h3 className="font-display text-xl tracking-tight text-forest-950">
                     {formatGroupDate(dateKey)}
                   </h3>
                   {relativeLabel ? (
-                    <Badge variant="clay" dot>
+                    <Badge variant="bronze" dot>
                       {relativeLabel}
                     </Badge>
                   ) : null}
@@ -420,7 +420,7 @@ export function AppointmentTable({
                         <tr
                           key={appointment.id}
                           className={cn(
-                            'group transition-colors hover:bg-cream-50/50',
+                            'group transition-colors hover:bg-paper-50/50',
                             appointment.status === 'cancelled' && 'bg-stone-50/40',
                           )}
                         >
@@ -439,7 +439,7 @@ export function AppointmentTable({
                                 <button
                                   type="button"
                                   onClick={() => setSelectedId(appointment.id)}
-                                  className="block max-w-full truncate text-left text-xs font-semibold text-forest-950 transition-colors hover:text-clay-600"
+                                  className="block max-w-full truncate text-left text-xs font-semibold text-forest-950 transition-colors hover:text-bronze-600"
                                   title="Ver detalle de la reserva"
                                 >
                                   {appointment.client_name}
@@ -508,7 +508,7 @@ export function AppointmentTable({
                     <article
                       key={appointment.id}
                       className={cn(
-                        'rounded-xl border border-line/80 bg-white p-3.5',
+                        'rounded-xl border border-line/80 bg-paper-50 p-3.5',
                         appointment.status === 'cancelled' && 'bg-stone-50/45',
                       )}
                     >
@@ -535,7 +535,7 @@ export function AppointmentTable({
                         <StatusBadge status={appointment.status} />
                       </div>
 
-                      <div className="mt-3 flex items-center justify-between gap-2 rounded-lg bg-cream-50 px-2.5 py-2">
+                      <div className="mt-3 flex items-center justify-between gap-2 rounded-lg bg-paper-50 px-2.5 py-2">
                         <div className="min-w-0">
                           <p className="truncate text-[10px] font-medium text-forest-900">
                             {appointment.service?.name || 'Servicio'}
@@ -618,7 +618,7 @@ export function AppointmentTable({
               <StatusBadge status={selectedAppointment.status} />
             </div>
 
-            <dl className="mt-5 divide-y divide-line/70 overflow-hidden rounded-xl border border-line bg-cream-50/50">
+            <dl className="mt-5 divide-y divide-line/70 overflow-hidden rounded-xl border border-line bg-paper-50/50">
               {[
                 ['Servicio', selectedAppointment.service?.name || 'Servicio'],
                 [

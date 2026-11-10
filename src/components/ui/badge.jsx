@@ -12,9 +12,9 @@ const badgeVariants = cva(
         pending: 'border-amber-200 bg-amber-50 text-amber-700',
         confirmed: 'border-emerald-200 bg-emerald-50 text-emerald-700',
         cancelled: 'border-stone-200 bg-stone-100 text-stone-500',
-        clay: 'border-clay-200 bg-clay-50 text-clay-700',
-        demo: 'border-clay-200 bg-clay-50 text-clay-700',
-        dark: 'border-white/15 bg-white/10 text-cream-100',
+        clay: 'border-bronze-200 bg-bronze-50 text-bronze-700',
+        demo: 'border-bronze-200 bg-bronze-50 text-bronze-700',
+        dark: 'border-white/15 bg-white/10 text-paper-100',
       },
     },
     defaultVariants: {

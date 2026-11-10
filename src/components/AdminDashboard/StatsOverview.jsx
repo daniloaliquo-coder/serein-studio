@@ -93,48 +93,48 @@ export function StatsOverview({ appointments = [], loading = false }) {
 
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-      <article className="relative overflow-hidden rounded-2xl bg-forest-950 p-5 text-cream-50 shadow-soft">
+      <article className="relative overflow-hidden rounded-2xl bg-forest-950 p-5 text-paper-50 shadow-soft">
         <div
           className="pointer-events-none absolute -right-10 -top-12 h-40 w-40 rounded-full border border-white/10"
           aria-hidden="true"
         />
         <div className="relative flex items-start justify-between gap-4">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cream-200/55">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-paper-200/55">
               Turnos hoy
             </p>
-            <p className="mt-4 font-display text-4xl leading-none tabular-nums text-cream-50">
+            <p className="mt-4 font-display text-4xl leading-none tabular-nums text-paper-50">
               {metrics.totalToday}
             </p>
           </div>
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-clay-200">
+          <span className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-paper-300">
             <CalendarCheck2 className="h-4 w-4" aria-hidden="true" />
           </span>
         </div>
 
         <div className="relative mt-5">
-          <div className="flex items-center justify-between text-[10px] text-cream-200/55">
+          <div className="flex items-center justify-between text-[10px] text-paper-200/55">
             <span>
-              <strong className="font-semibold text-cream-100">{metrics.confirmedToday}</strong>{' '}
+              <strong className="font-semibold text-paper-100">{metrics.confirmedToday}</strong>{' '}
               confirmados
             </span>
             <span>
-              <strong className="font-semibold text-cream-100">{metrics.pendingToday}</strong>{' '}
+              <strong className="font-semibold text-paper-100">{metrics.pendingToday}</strong>{' '}
               pendientes
             </span>
           </div>
           <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/10">
             <div
-              className="h-full rounded-full bg-clay-300 transition-all duration-500"
+              className="h-full rounded-full bg-paper-300 transition-transform duration-500"
               style={{ width: `${confirmedRatio}%` }}
             />
           </div>
           {metrics.cancelledToday > 0 ? (
-            <p className="mt-2.5 text-[9px] text-cream-200/35">
+            <p className="mt-2.5 text-[9px] text-paper-200/35">
               {metrics.cancelledToday} cancelada{metrics.cancelledToday === 1 ? '' : 's'} hoy
             </p>
           ) : (
-            <p className="mt-2.5 text-[9px] text-cream-200/35">Sin cancelaciones hoy</p>
+            <p className="mt-2.5 text-[9px] text-paper-200/35">Sin cancelaciones hoy</p>
           )}
         </div>
       </article>
@@ -161,9 +161,9 @@ export function StatsOverview({ appointments = [], loading = false }) {
         </div>
       </article>
 
-      <article className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-white via-white to-clay-50/70 p-5 shadow-soft sm:col-span-2 xl:col-span-1">
+      <article className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-white via-white to-paper-200/70 p-5 shadow-soft sm:col-span-2 xl:col-span-1">
         <div
-          className="pointer-events-none absolute -bottom-12 -right-8 h-36 w-36 rounded-full bg-clay-100/50 blur-2xl"
+          className="pointer-events-none absolute -bottom-12 -right-8 h-36 w-36 rounded-full bg-paper-200/50 blur-2xl"
           aria-hidden="true"
         />
         <div className="relative flex items-start justify-between gap-4">
@@ -175,13 +175,13 @@ export function StatsOverview({ appointments = [], loading = false }) {
               {metrics.topService?.name || 'Aún sin datos'}
             </p>
           </div>
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-clay-100 text-clay-700">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-paper-100 text-forest-800">
             <TrendingUp className="h-4 w-4" aria-hidden="true" />
           </span>
         </div>
-        <div className="relative mt-5 flex items-center justify-between border-t border-clay-100/80 pt-3 text-[10px] text-muted">
+        <div className="relative mt-5 flex items-center justify-between border-t border-paper-200/80 pt-3 text-[10px] text-muted">
           <span>Esta semana</span>
-          <span className={cn('font-semibold', metrics.topService ? 'text-clay-700' : 'text-muted/60')}>
+          <span className={cn('font-semibold', metrics.topService ? 'text-forest-800' : 'text-muted/60')}>
             {metrics.topService
               ? `${metrics.topService.count} reserva${metrics.topService.count === 1 ? '' : 's'}`
               : 'Sin reservas todavía'}

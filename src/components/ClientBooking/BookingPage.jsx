@@ -65,7 +65,7 @@ function HeroVisual({ settings }) {
     <div className="relative mx-auto w-full max-w-[430px] animate-fade-up [animation-delay:140ms]">
       <div className="aspect-[4/5] overflow-hidden rounded-[3rem] border border-line bg-forest-950 p-6 shadow-card sm:p-8">
         <div className="relative flex h-full flex-col justify-between text-paper-50">
-          <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.28em] text-paper-300/55">
+          <div className="flex items-center justify-between caption font-semibold uppercase tracking-label text-paper-300/55">
             <span>Serein Studio</span>
             <span>Madrid</span>
           </div>
@@ -74,7 +74,7 @@ function HeroVisual({ settings }) {
             <span className="mx-auto mb-6 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/10">
               <Sparkles className="h-5 w-5 text-paper-300" strokeWidth={1.5} aria-hidden="true" />
             </span>
-            <p className="font-display text-[2.5rem] font-light italic leading-[1.08] tracking-tight text-paper-50 sm:text-[3rem]">
+            <p className="font-display display-hero font-light italic leading-[1.08] tracking-display text-paper-50">
               Cuida de ti,
               <br />
               sin complicarte.
@@ -87,8 +87,8 @@ function HeroVisual({ settings }) {
                 <CalendarCheck2 className="h-4 w-4" aria-hidden="true" />
               </span>
               <div className="min-w-0 flex-1">
-                <p className="text-[11px] font-semibold text-paper-50">Tu próxima cita</p>
-                <p className="mt-0.5 text-[10px] text-paper-300/55">
+                <p className="label-sm font-semibold text-paper-50">Tu próxima cita</p>
+                <p className="mt-0.5 caption text-paper-300/55">
                   {getWorkingDaysLabel(settings.working_days)} · {normalizeTime(settings.open_time)}–
                   {normalizeTime(settings.close_time)}
                 </p>
@@ -110,16 +110,16 @@ function HeroVisual({ settings }) {
           <MessageCircle className="h-4 w-4" aria-hidden="true" />
         </span>
         <div>
-          <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-muted">
+          <p className="label-xs font-semibold uppercase tracking-label text-muted">
             Confirmación
           </p>
-          <p className="text-[11px] font-semibold text-ink">Directo por WhatsApp</p>
+          <p className="label-sm font-semibold text-ink">Directo por WhatsApp</p>
         </div>
       </div>
 
       <div className="absolute -right-4 top-16 hidden items-center gap-2 rounded-full border border-line bg-white px-3.5 py-2.5 shadow-soft sm:flex">
         <span className="h-1.5 w-1.5 rounded-full bg-forest-600" aria-hidden="true" />
-        <span className="text-[10px] font-semibold text-ink">Agenda en tiempo real</span>
+        <span className="label-xs font-semibold text-ink">Agenda en tiempo real</span>
       </div>
     </div>
   )
@@ -249,17 +249,17 @@ export function BookingPage() {
           <div className="relative mx-auto grid max-w-6xl gap-14 px-5 pb-16 pt-12 sm:pt-16 lg:grid-cols-[1.06fr_0.94fr] lg:items-center lg:gap-16 lg:px-8 lg:pb-24 lg:pt-20">
             <div className="animate-fade-up">
               <div className="inline-flex items-center gap-2.5 rounded-full border border-line/80 bg-white/60 py-1.5 pl-2 pr-3.5 backdrop-blur-sm">
-                <span className="rounded-full bg-forest-800 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.18em] text-paper-50">
+                <span className="rounded-full bg-forest-800 px-2.5 py-1 caption font-bold uppercase tracking-label text-paper-50">
                   Estudio boutique
                 </span>
-                <span className="text-[10px] font-semibold text-muted">
+                <span className="label-xs font-semibold text-muted">
                   Belleza & bienestar · Madrid
                 </span>
               </div>
 
               <h1
                 data-grid-avoid
-                className="mt-6 max-w-2xl text-balance font-display text-[clamp(3rem,7.2vw,5.15rem)] leading-[0.94] tracking-[-0.04em] text-forest-950"
+                className="mt-6 max-w-2xl text-balance font-display display-hero leading-[0.94] tracking-display text-forest-950"
               >
                 Un momento para ti,
                 <span className="block font-light italic text-bronze-500">
@@ -269,7 +269,7 @@ export function BookingPage() {
 
               <p
                 data-grid-avoid
-                className="mt-6 max-w-lg text-pretty text-[15px] leading-relaxed text-muted sm:text-base"
+                className="mt-6 max-w-lg text-pretty text-sm leading-relaxed text-muted sm:text-base"
               >
                 Cabello, piel y manos en un solo lugar. Elige tu ritual, encuentra el hueco que
                 mejor te venga y deja que nosotras nos ocupemos del resto.
@@ -288,7 +288,7 @@ export function BookingPage() {
                   <span className="grid h-9 w-9 place-items-center rounded-full bg-[#128C7E]/10 text-[#128C7E]">
                     <MessageCircle className="h-4 w-4" aria-hidden="true" />
                   </span>
-                  <p className="text-[11px] leading-snug text-muted">
+                  <p className="caption leading-snug text-muted">
                     Confirmación <span className="font-semibold text-forest-900">por WhatsApp</span>
                     <br />
                     Sin pagos por adelantado
@@ -296,7 +296,7 @@ export function BookingPage() {
                 </div>
               </div>
 
-              <div className="mt-10 flex items-center gap-5 border-t border-line/80 pt-6 text-[11px] font-medium text-muted">
+              <div className="mt-10 flex items-center gap-5 border-t border-line/80 pt-6 label-sm font-medium text-muted">
                 <span className="flex items-center gap-1.5">
                   <Check className="h-3.5 w-3.5 text-forest-500" aria-hidden="true" />
                   Agenda actualizada al momento
@@ -348,7 +348,7 @@ export function BookingPage() {
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-600">
+                <p className="flex items-center gap-2 label-xs font-bold uppercase tracking-label text-bronze-600">
                   <span className="h-px w-8 bg-bronze-400" aria-hidden="true" />
                   Agenda online
                 </p>
@@ -435,7 +435,7 @@ export function BookingPage() {
 
             <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-300/80">
+                <p className="caption font-bold uppercase tracking-label text-bronze-300/80">
                   El estudio
                 </p>
                 <h2 className="mt-4 max-w-xl text-balance font-display text-3xl leading-[1.08] tracking-tight sm:text-4xl">
@@ -465,7 +465,7 @@ export function BookingPage() {
                 <div className="flex items-start gap-3">
                   <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-bronze-300" aria-hidden="true" />
                   <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-paper-200/45">
+                    <p className="caption font-bold uppercase tracking-label text-paper-200/45">
                       Horario
                     </p>
                     <p className="mt-1 text-sm text-paper-100">
@@ -480,7 +480,7 @@ export function BookingPage() {
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-bronze-300" aria-hidden="true" />
                   <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-paper-200/45">
+                    <p className="caption font-bold uppercase tracking-label text-paper-200/45">
                       Visítanos
                     </p>
                     <p className="mt-1 text-sm text-paper-100">{BUSINESS_PROFILE.address}</p>
@@ -518,7 +518,7 @@ export function BookingPage() {
 
             <div className="flex flex-wrap gap-x-10 gap-y-5 text-xs">
               <div className="space-y-2.5">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted/60">
+                <p className="label-xs font-bold uppercase tracking-label text-muted/60">
                   Reservas
                 </p>
                 <a href="#reservar" className="block font-medium text-forest-900 hover:text-bronze-600">
@@ -530,7 +530,7 @@ export function BookingPage() {
               </div>
 
               <div className="space-y-2.5">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted/60">
+                <p className="label-xs font-bold uppercase tracking-label text-muted/60">
                   Estudio
                 </p>
                 <p className="text-forest-900">
@@ -547,7 +547,7 @@ export function BookingPage() {
             </div>
           </div>
 
-          <div className="mt-9 flex flex-col gap-3 border-t border-line/80 pt-5 text-[10px] text-muted/70 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-9 flex flex-col gap-3 border-t border-line/80 pt-5 caption text-muted/70 sm:flex-row sm:items-center sm:justify-between">
             <p>
               © {new Date().getFullYear()} {settings.business_name}. Todos los derechos reservados.
             </p>

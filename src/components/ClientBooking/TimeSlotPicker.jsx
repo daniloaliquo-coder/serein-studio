@@ -180,7 +180,7 @@ export function TimeSlotPicker({
     <div>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-600">
+          <p className="label-xs font-bold uppercase tracking-label text-bronze-600">
             Paso 02 · Elige el momento
           </p>
           <h2 className="mt-2 font-display text-3xl tracking-tight text-forest-950 sm:text-4xl">
@@ -233,7 +233,7 @@ export function TimeSlotPicker({
             {WEEKDAYS.map((day) => (
               <span
                 key={day}
-                className="pb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-muted/60"
+                className="pb-2 label-xs font-bold uppercase tracking-label text-muted/60"
               >
                 {day}
               </span>
@@ -281,7 +281,7 @@ export function TimeSlotPicker({
             })}
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line/80 pt-4 text-[10px] text-muted">
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line/80 pt-4 caption text-muted">
             <span className="inline-flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-bronze-400" aria-hidden="true" />
               Con huecos
@@ -307,7 +307,7 @@ export function TimeSlotPicker({
               <h3 className="font-display text-xl tracking-tight text-forest-950">
                 Horarios
               </h3>
-              <p className="mt-1 text-[11px] leading-relaxed text-muted">
+              <p className="mt-1 caption leading-relaxed text-muted">
                 {selectedDate
                   ? formatGroupDate(selectedDate)
                   : 'Selecciona un día para ver los turnos libres.'}
@@ -373,7 +373,7 @@ export function TimeSlotPicker({
               <div className="space-y-5">
                 {morningSlots.length ? (
                   <div>
-                    <p className="mb-2.5 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
+                    <p className="mb-2.5 flex items-center gap-1.5 label-xs font-bold uppercase tracking-label text-muted">
                       <Sun className="h-3.5 w-3.5 text-bronze-500" aria-hidden="true" />
                       Mañana
                     </p>
@@ -393,7 +393,7 @@ export function TimeSlotPicker({
 
                 {afternoonSlots.length ? (
                   <div>
-                    <p className="mb-2.5 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-muted">
+                    <p className="mb-2.5 flex items-center gap-1.5 label-xs font-bold uppercase tracking-label text-muted">
                       <Sunset className="h-3.5 w-3.5 text-bronze-500" aria-hidden="true" />
                       Tarde
                     </p>
@@ -422,7 +422,7 @@ export function TimeSlotPicker({
                     </p>
                   </div>
                 ) : (
-                  <p className="text-[11px] leading-relaxed text-muted">
+                  <p className="caption leading-relaxed text-muted">
                     Selecciona una hora para continuar.
                   </p>
                 )}
@@ -430,7 +430,7 @@ export function TimeSlotPicker({
             )}
           </div>
 
-          <p className="mt-5 flex items-start gap-2 text-[10px] leading-relaxed text-muted/75">
+          <p className="mt-5 flex items-start gap-2 caption leading-relaxed text-muted/75">
             <Timer className="mt-0.5 h-3 w-3 shrink-0" aria-hidden="true" />
             La agenda bloquea automáticamente el tiempo necesario para cada servicio. Hora local
             del estudio.
@@ -460,7 +460,7 @@ function TimeButton({ slot, selected, duration, onSelect }) {
       {slot.value}
       <span
         className={cn(
-          'mt-0.5 text-[8px] font-medium',
+          'mt-0.5 label-xs font-medium',
           selected ? 'text-paper-200/70' : 'text-muted/55',
         )}
       >

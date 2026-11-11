@@ -36,7 +36,7 @@ function Stepper({ current, onNavigate }) {
             >
               <span
                 className={cn(
-                  'grid h-6 w-6 shrink-0 place-items-center rounded-full border text-[10px] font-bold transition-colors',
+                  'grid h-6 w-6 shrink-0 place-items-center rounded-full border text-label-xs font-bold transition-colors',
                   isComplete && 'border-forest-800 bg-forest-800 text-paper-50',
                   isCurrent && 'border-forest-800 bg-forest-50 text-forest-900 ring-3 ring-forest-500/10',
                   !isComplete && !isCurrent && 'border-line bg-white text-muted/40',
@@ -46,7 +46,7 @@ function Stepper({ current, onNavigate }) {
               </span>
               <span
                 className={cn(
-                  'whitespace-nowrap text-[10px] font-semibold tracking-tight sm:text-xs',
+                  'whitespace-nowrap text-label-xs font-semibold tracking-label sm:text-xs',
                   isCurrent ? 'text-forest-950' : isComplete ? 'text-forest-700' : 'text-muted/50',
                 )}
               >
@@ -161,7 +161,7 @@ export function BookingFlow({ services, settings, isDemo }) {
                     Atrás
                   </Button>
                 ) : (
-                  <p className="hidden items-center gap-1.5 text-[10px] text-muted sm:flex">
+                  <p className="hidden items-center gap-1.5 caption text-muted sm:flex">
                     <LockKeyhole className="h-3.5 w-3.5" aria-hidden="true" />
                     Reserva segura, sin pago online
                   </p>

@@ -31,16 +31,16 @@ export function BookingSummary({ service, dateKey, time, className }) {
 
       <div className="relative">
         <div className="flex items-center justify-between gap-4">
-          <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-paper-200/65">
+          <p className="caption font-bold uppercase tracking-label text-paper-200/65">
             Tu reserva
           </p>
-          <span className="inline-flex items-center gap-1.5 text-[10px] font-medium text-paper-200/65">
+          <span className="inline-flex items-center gap-1.5 caption font-medium text-paper-200/65">
             <MessageCircle className="h-3 w-3" aria-hidden="true" />
             Sin pago online
           </span>
         </div>
 
-        <h3 className="mt-5 font-display text-[1.7rem] leading-tight tracking-tight text-paper-50">
+        <h3 className="mt-5 font-display display-xl leading-tight tracking-display text-paper-50">
           {service ? service.name : 'Diseña tu momento'}
         </h3>
         <p className="mt-2 min-h-[2.5rem] text-xs leading-relaxed text-paper-200/60">
@@ -55,7 +55,7 @@ export function BookingSummary({ service, dateKey, time, className }) {
           <div className="flex items-start gap-3">
             <CalendarDays className="mt-0.5 h-4 w-4 shrink-0 text-bronze-300" aria-hidden="true" />
             <div className="min-w-0">
-              <dt className="text-[10px] font-semibold uppercase tracking-[0.18em] text-paper-200/45">
+              <dt className="caption font-semibold uppercase tracking-label text-paper-200/45">
                 Fecha
               </dt>
               <dd className={cn('mt-0.5 leading-snug', dateKey ? 'text-paper-100' : 'text-paper-200/35')}>
@@ -67,7 +67,7 @@ export function BookingSummary({ service, dateKey, time, className }) {
           <div className="flex items-start gap-3">
             <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-bronze-300" aria-hidden="true" />
             <div>
-              <dt className="text-[10px] font-semibold uppercase tracking-[0.18em] text-paper-200/45">
+              <dt className="caption font-semibold uppercase tracking-label text-paper-200/45">
                 Hora
               </dt>
               <dd className={cn('mt-0.5 tabular-nums', time ? 'text-paper-100' : 'text-paper-200/35')}>
@@ -79,7 +79,7 @@ export function BookingSummary({ service, dateKey, time, className }) {
           <div className="flex items-start gap-3">
             <Timer className="mt-0.5 h-4 w-4 shrink-0 text-bronze-300" aria-hidden="true" />
             <div>
-              <dt className="text-[10px] font-semibold uppercase tracking-[0.18em] text-paper-200/45">
+              <dt className="caption font-semibold uppercase tracking-label text-paper-200/45">
                 Duración
               </dt>
               <dd className={cn('mt-0.5', service ? 'text-paper-100' : 'text-paper-200/35')}>
@@ -93,7 +93,7 @@ export function BookingSummary({ service, dateKey, time, className }) {
 
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-paper-200/45">
+            <p className="caption font-semibold uppercase tracking-label text-paper-200/45">
               Total estimado
             </p>
             <p className={cn('mt-1 font-display text-3xl tabular-nums', hasSelection ? 'text-paper-50' : 'text-paper-200/30')}>
@@ -103,7 +103,7 @@ export function BookingSummary({ service, dateKey, time, className }) {
           <StatusBadge status="pending" className="mb-1 border-white/15 bg-white/10 text-paper-100" />
         </div>
 
-        <p className="mt-5 flex items-start gap-2 border-t border-white/10 pt-4 text-[10px] leading-relaxed text-paper-200/50">
+        <p className="mt-5 flex items-start gap-2 border-t border-white/10 pt-4 caption leading-relaxed text-paper-200/50">
           <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-bronze-300" aria-hidden="true" />
           Tu cita queda pendiente hasta que la confirmemos contigo por WhatsApp.
         </p>

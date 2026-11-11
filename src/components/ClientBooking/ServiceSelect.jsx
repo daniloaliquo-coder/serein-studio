@@ -32,7 +32,7 @@ export function ServiceSelect({ services, selectedId, onSelect }) {
     <div>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-[10px] font-semibold tracking-tight text-forest-700">
+          <p className="label-xs font-semibold tracking-tight text-forest-700">
             Elige tu ritual
           </p>
           <h2 className="mt-1 font-display text-3xl tracking-tight text-ink sm:text-4xl">
@@ -107,7 +107,7 @@ export function ServiceSelect({ services, selectedId, onSelect }) {
                   {service.description}
                 </p>
                 <div className="mt-auto flex items-center justify-between border-t border-line/60 pt-4">
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-muted">
+                  <span className="inline-flex items-center gap-1.5 label-sm font-semibold text-muted">
                     <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
                     {formatDuration(service.duration_min)}
                   </span>
@@ -129,7 +129,7 @@ export function ServiceSelect({ services, selectedId, onSelect }) {
         })}
       </div>
 
-      <p className="mt-5 flex items-center gap-2 text-[11px] text-muted">
+      <p className="mt-5 flex items-center gap-2 caption text-muted">
         <ShieldCheck className="h-3.5 w-3.5 text-forest-500" aria-hidden="true" />
         Precios finales. No se solicita ningún pago online para reservar.
       </p>

@@ -170,7 +170,7 @@ export function ConfirmationStep({
         <div className="mx-auto mt-7 max-w-xl overflow-hidden rounded-2xl border border-line bg-white text-left shadow-soft">
           <div className="flex items-center justify-between gap-4 border-b border-line/80 bg-forest-950 px-5 py-4 text-paper-50">
             <div>
-              <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-paper-200/55">
+              <p className="caption font-bold uppercase tracking-label text-paper-200/55">
                 Tu cita
               </p>
               <p className="mt-1 font-display text-xl">{service.name}</p>
@@ -220,7 +220,7 @@ export function ConfirmationStep({
             </div>
           )}
 
-          <p className="text-[11px] leading-relaxed text-muted">
+          <p className="caption leading-relaxed text-muted">
             Se abrirá WhatsApp con todos los datos de tu reserva ya escritos. Solo tienes que
             pulsar enviar.
           </p>
@@ -231,7 +231,7 @@ export function ConfirmationStep({
         </div>
 
         {isDemo ? (
-          <p className="mx-auto mt-6 max-w-md text-[10px] leading-relaxed text-muted/70">
+          <p className="mx-auto mt-6 max-w-md caption leading-relaxed text-muted/70">
             Modo demostración: esta reserva se ha guardado en el almacenamiento local de este
             navegador. Con Supabase configurado se guardará en la base de datos real.
           </p>
@@ -243,7 +243,7 @@ export function ConfirmationStep({
   return (
     <div>
       <div>
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-bronze-600">
+        <p className="label-xs font-bold uppercase tracking-label text-bronze-600">
           Paso 03 · Confirma tus datos
         </p>
         <h2 className="mt-2 font-display text-3xl tracking-tight text-forest-950 sm:text-4xl">
@@ -290,7 +290,7 @@ export function ConfirmationStep({
               aria-describedby={errors.name ? 'client-name-error' : undefined}
             />
             {errors.name ? (
-              <p id="client-name-error" className="mt-1.5 text-[11px] text-red-600" role="alert">
+              <p id="client-name-error" className="mt-1.5 caption text-red-600" role="alert">
                 {errors.name}
               </p>
             ) : null}
@@ -326,14 +326,14 @@ export function ConfirmationStep({
               />
             </div>
             {errors.phone ? (
-              <p id="client-phone-error" className="mt-1.5 text-[11px] text-red-600" role="alert">
+              <p id="client-phone-error" className="mt-1.5 caption text-red-600" role="alert">
                 {errors.phone}
               </p>
             ) : null}
           </div>
         </div>
 
-        <div className="mt-4 flex items-start gap-2 rounded-xl bg-forest-50/70 p-3 text-[11px] leading-relaxed text-forest-700">
+        <div className="mt-4 flex items-start gap-2 rounded-xl bg-forest-50/70 p-3 caption leading-relaxed text-forest-700">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-forest-500" aria-hidden="true" />
           Usamos tu teléfono únicamente para gestionar esta cita. Nada de listas de correo ni
           llamadas comerciales.
@@ -378,7 +378,7 @@ export function ConfirmationStep({
                 </>
               )}
             </Button>
-            <p className="text-center text-[10px] text-muted sm:text-right">
+            <p className="text-center caption text-muted sm:text-right">
               La cita queda pendiente hasta tu confirmación por WhatsApp.
             </p>
           </div>

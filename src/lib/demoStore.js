@@ -13,6 +13,7 @@ import { getAvailableSlots } from './availability'
 import { createId, digitsOnly } from './utils'
 
 const STORAGE_KEY = 'serein-studio:demo-state:v1'
+const BACKUP_KEY = `${STORAGE_KEY}:backup`
 const STORE_VERSION = 1
 
 let cachedState = null
@@ -54,6 +55,17 @@ function persistState() {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(cachedState))
   } catch {
     // Si el navegador bloquea localStorage, la demo sigue funcionando en memoria.
+  }
+}
+
+// Copia de seguridad del estado anterior, tomada justo antes de reiniciarlo.
+// La usa el modo demo para no perder citas si el reinicio falla o cambia de formato.
+function backupState() {
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY)
+    if (raw) window.localStorage.setItem(BACKUP_KEY, raw)
+  } catch {
+    // Sin espacio o almacenamiento bloqueado: el estado actual sigue en su clave.
   }
 }
 
@@ -140,6 +152,7 @@ function getState() {
       appointments: existing.appointments.map(normalizeAppointment).filter(Boolean),
     }
   } else {
+    if (existing) backupState()
     cachedState = createInitialState(existing)
     persistState()
   }

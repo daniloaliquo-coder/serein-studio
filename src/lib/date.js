@@ -14,7 +14,7 @@ import {
   startOfWeek,
 } from 'date-fns'
 import { es } from 'date-fns/locale'
-import { capitalizeFirst } from './utils'
+import { capitalizeFirst } from './utils.js'
 
 export function toDateKey(date = new Date()) {
   return format(date, 'yyyy-MM-dd')

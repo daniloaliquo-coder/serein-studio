@@ -2,10 +2,10 @@ import { differenceInCalendarDays, startOfDay } from 'date-fns'
 import {
   fromDateKey,
   getNowMinutes,
-  getTodayKey,
   normalizeTime,
   timeToMinutes,
-} from './date'
+  toDateKey,
+} from './date.js'
 
 export function intervalsOverlap(startA, durationA, startB, durationB) {
   return startA < startB + durationB && startA + durationA > startB
@@ -71,7 +71,7 @@ export function getAvailableSlots(
 
   if (duration <= 0 || close <= open) return []
 
-  const isToday = dateKey === getTodayKey()
+  const isToday = dateKey === toDateKey(now)
   const earliestStart = isToday ? getNowMinutes(now) + notice : 0
   const busy = getBookedSlotsForDate(bookedSlots, dateKey)
 

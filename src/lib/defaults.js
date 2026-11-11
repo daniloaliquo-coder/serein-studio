@@ -1,4 +1,4 @@
-export const CURRENCY = import.meta.env.VITE_CURRENCY?.trim() || 'EUR'
+export const CURRENCY = import.meta.env?.VITE_CURRENCY?.trim() || 'EUR'
 export const DEFAULT_DIAL_CODE = '+34'
 
 export const BUSINESS_PROFILE = {
@@ -11,8 +11,8 @@ export const BUSINESS_PROFILE = {
 
 export const DEFAULT_SETTINGS = {
   id: 1,
-  business_name: import.meta.env.VITE_BUSINESS_NAME?.trim() || 'Serein Studio',
-  whatsapp_number: import.meta.env.VITE_BUSINESS_WHATSAPP?.trim() || '+54 9 261 541 8156',
+  business_name: import.meta.env?.VITE_BUSINESS_NAME?.trim() || 'Serein Studio',
+  whatsapp_number: import.meta.env?.VITE_BUSINESS_WHATSAPP?.trim() || '+54 9 261 541 8156',
   open_time: '09:00',
   close_time: '19:00',
   slot_interval_min: 30,

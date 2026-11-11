@@ -3,7 +3,7 @@ import { cn } from '../../lib/utils'
 import { STATUS_META } from '../../lib/defaults'
 
 const badgeVariants = cva(
-  'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold leading-none tracking-wide',
+  'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-label-xs font-semibold',
   {
     variants: {
       variant: {

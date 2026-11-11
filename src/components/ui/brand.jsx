@@ -26,7 +26,7 @@ export function Brand({ name = 'Serein Studio', variant = 'light', size = 'defau
       <span className="leading-none">
         <span
           className={cn(
-            'block font-display font-medium tracking-[0.16em] uppercase',
+            'block font-display font-medium tracking-eyebrow uppercase',
             isSmall ? 'text-lg' : 'text-xl',
             isDark ? 'text-paper-50' : 'text-forest-950',
           )}
@@ -35,7 +35,7 @@ export function Brand({ name = 'Serein Studio', variant = 'light', size = 'defau
         </span>
         <span
           className={cn(
-            'mt-1 block text-[8px] font-semibold uppercase tracking-[0.38em]',
+            'mt-1 block text-label-xs font-semibold uppercase tracking-label',
             isDark ? 'text-paper-300/70' : 'text-muted',
           )}
         >

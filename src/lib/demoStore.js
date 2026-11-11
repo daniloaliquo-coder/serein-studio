@@ -2,15 +2,15 @@ import {
   DEFAULT_SETTINGS,
   DEMO_SERVICES,
   normalizeSettings,
-} from './defaults'
+} from './defaults.js'
 import {
   addDaysKey,
   fromDateKey,
   getTodayKey,
   normalizeTime,
-} from './date'
-import { getAvailableSlots } from './availability'
-import { createId, digitsOnly } from './utils'
+} from './date.js'
+import { getAvailableSlots } from './availability.js'
+import { createId, digitsOnly } from './utils.js'
 
 const STORAGE_KEY = 'serein-studio:demo-state:v1'
 const BACKUP_KEY = `${STORAGE_KEY}:backup`

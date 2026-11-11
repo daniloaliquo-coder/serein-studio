@@ -44,6 +44,11 @@ create index if not exists appointments_service_idx
 create index if not exists appointments_status_idx
   on public.appointments (status);
 
+-- Historial por teléfono: cubre el filtro de `fetchClientHistory` y su orden
+-- (appointment_date desc, start_time desc) en una sola pasada.
+create index if not exists appointments_client_phone_idx
+  on public.appointments (client_phone, appointment_date desc, start_time desc);
+
 -- ---------------------------------------------------------------------
 -- 3. CONFIGURACIÓN DEL HORARIO (tabla auxiliar de una sola fila)
 --    Permite que el panel de ajustes afecte a la agenda pública.

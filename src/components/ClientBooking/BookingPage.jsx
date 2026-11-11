@@ -15,6 +15,7 @@ import {
 import { BookingFlow } from './BookingFlow'
 import { Brand } from '../ui/brand'
 import { Badge } from '../ui/badge'
+import { GridPulse } from '../ui/grid-pulse'
 import { Button, buttonVariants } from '../ui/button'
 import { Skeleton } from '../ui/skeleton'
 import { fetchServices, fetchSettings, isDemoMode } from '../../lib/api'
@@ -233,15 +234,17 @@ export function BookingPage() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden">
+        <section className="relative isolate overflow-hidden">
           <div
-            className="pointer-events-none absolute -left-40 top-16 h-[28rem] w-[28rem] rounded-full bg-bronze-100/50 blur-3xl"
+            className="pointer-events-none absolute -left-40 top-16 h-[28rem] w-[28rem] rounded-full bg-bronze-100/40 blur-3xl"
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute right-0 top-0 h-[22rem] w-[22rem] translate-x-1/3 rounded-full bg-forest-100/60 blur-3xl"
+            className="pointer-events-none absolute right-0 top-0 h-[22rem] w-[22rem] translate-x-1/3 rounded-full bg-forest-100/50 blur-3xl"
             aria-hidden="true"
           />
+
+          <GridPulse className="opacity-75" cell={26} reach={2.4} ambient={2} maxLit={150} />
 
           <div className="relative mx-auto grid max-w-6xl gap-14 px-5 pb-16 pt-12 sm:pt-16 lg:grid-cols-[1.06fr_0.94fr] lg:items-center lg:gap-16 lg:px-8 lg:pb-24 lg:pt-20">
             <div className="animate-fade-up">
@@ -254,14 +257,20 @@ export function BookingPage() {
                 </span>
               </div>
 
-              <h1 className="mt-6 max-w-2xl text-balance font-display text-[clamp(3rem,7.2vw,5.15rem)] leading-[0.94] tracking-[-0.04em] text-forest-950">
+              <h1
+                data-grid-avoid
+                className="mt-6 max-w-2xl text-balance font-display text-[clamp(3rem,7.2vw,5.15rem)] leading-[0.94] tracking-[-0.04em] text-forest-950"
+              >
                 Un momento para ti,
                 <span className="block font-light italic text-bronze-500">
                   perfectamente reservado.
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-lg text-pretty text-[15px] leading-relaxed text-muted sm:text-base">
+              <p
+                data-grid-avoid
+                className="mt-6 max-w-lg text-pretty text-[15px] leading-relaxed text-muted sm:text-base"
+              >
                 Cabello, piel y manos en un solo lugar. Elige tu ritual, encuentra el hueco que
                 mejor te venga y deja que nosotras nos ocupemos del resto.
               </p>

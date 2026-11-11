@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Reservas con métricas corregidas (RF-7).
+ * Mientras la tipografía web carga, el navegador pinta la copia local escalada para
+ * ocupar el mismo ancho y la misma altura de línea que Fraunces y Manrope. Sin esto,
+ * Georgia es ~14 % más ancha que Fraunces y la página se reacomoda al hacer el cambio.
+ * Los porcentajes salen de medir ambas familias con textos reales de la interfaz.
+ */
+@font-face {
+  font-family: 'Fraunces Fallback';
+  src: local('Georgia');
+  size-adjust: 86%;
+  ascent-override: 113.95%;
+  descent-override: 30.23%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Manrope Fallback';
+  src: local('Segoe UI'), local('Roboto'), local('Helvetica Neue'), local('Arial');
+  size-adjust: 101.8%;
+  ascent-override: 105.11%;
+  descent-override: 29.47%;
+  line-gap-override: 0%;
+}
+
 @layer base {
   :root {
     color-scheme: light;
@@ -33,7 +58,24 @@
   h2,
   h3,
   h4 {
-    font-feature-settings: 'ss01' on, 'liga' on;
+    /* Titulares: líneas equilibradas en lugar de una última palabra huérfana. */
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    font-optical-sizing: auto;
+  }
+
+  p {
+    /* Prosa: evita palabras sueltas al final y corta palabras largas sin desbordar. */
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  li,
+  td,
+  th {
+    /* Datos de listas y tablas: sin guiones automáticos, solo corte si no cabe. */
+    overflow-wrap: break-word;
   }
 
   ::selection {

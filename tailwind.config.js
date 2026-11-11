@@ -38,8 +38,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
-        display: ['Fraunces', 'Georgia', 'serif'],
+        // Las familias «Fallback» se declaran en src/index.css con métricas ajustadas.
+        sans: ['Manrope', '"Manrope Fallback"', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', '"Fraunces Fallback"', 'Georgia', 'serif'],
       },
       // Escala tipográfica cerrada (spec 001). Fuera de estos niveles no hay tamaños
       // válidos: la guardia de tests/typography.test.js rechaza los valores sueltos.

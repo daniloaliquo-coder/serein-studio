@@ -41,6 +41,34 @@ export default {
         sans: ['Manrope', 'system-ui', 'sans-serif'],
         display: ['Fraunces', 'Georgia', 'serif'],
       },
+      // Escala tipográfica cerrada (spec 001). Fuera de estos niveles no hay tamaños
+      // válidos: la guardia de tests/typography.test.js rechaza los valores sueltos.
+      fontSize: {
+        'label-xs': ['11px', { lineHeight: '1.35', letterSpacing: '0.14em' }],
+        'label-sm': ['12px', { lineHeight: '1.4', letterSpacing: '0.1em' }],
+        caption: ['12px', { lineHeight: '1.5', letterSpacing: '0' }],
+        'display-hero': [
+          'clamp(2.75rem, 2rem + 0.2083vw, 5rem)',
+          { lineHeight: '0.98', letterSpacing: '-0.03em' },
+        ],
+        'display-xl': [
+          'clamp(2.25rem, 1.8333rem + 0.1157vw, 3.5rem)',
+          { lineHeight: '1.02', letterSpacing: '-0.03em' },
+        ],
+        'display-lg': [
+          'clamp(1.875rem, 1.6667rem + 0.0579vw, 2.5rem)',
+          { lineHeight: '1.06', letterSpacing: '-0.02em' },
+        ],
+        'display-md': [
+          'clamp(1.5rem, 1.375rem + 0.0347vw, 1.875rem)',
+          { lineHeight: '1.12', letterSpacing: '-0.015em' },
+        ],
+      },
+      letterSpacing: {
+        label: '0.14em',
+        eyebrow: '0.1em',
+        display: '-0.03em',
+      },
       boxShadow: {
         soft: '0 20px 60px -32px rgba(30, 48, 42, 0.24)',
         card: '0 30px 70px -38px rgba(30, 48, 42, 0.32)',
